@@ -1,0 +1,3146 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crkva na Tustom brdu — Robaje, Mionica. Istorija svetog mesta od bronzanog doba do danas i projekat obnove crkve porušene u Drugom svetskom ratu.">
+    <title>Crkva na Tustom Brdu · Robaje</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & ROOT ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --green-deep:  #151E0A;
+            --green-dark:  #1E2D0F;
+            --green-mid:   #2D4718;
+            --green-light: #3E6122;
+            --gold:        #B8860B;
+            --gold-light:  #D4A820;
+            --gold-pale:   #F0D87A;
+            --terra:       #B94A2C;
+            --parchment:   #F4EFE3;
+            --parchment-2: #ECE4CC;
+            --parchment-3: #E2D6B8;
+            --stone:       #8B7B6A;
+            --stone-light: #C2B49E;
+            --ink:         #1A160E;
+            --text:        #2E2418;
+            --text-muted:  #5E4E3A;
+            --white:       #FDFAF3;
+            --border:      rgba(184,134,11,0.22);
+            --border-2:    rgba(184,134,11,0.12);
+
+            --serif:  'Playfair Display', Georgia, serif;
+            --prose:  'Crimson Text', Georgia, serif;
+            --ui:     'Inter', system-ui, -apple-system, sans-serif;
+
+            --w: 1160px;
+            --pad: clamp(60px, 8vw, 110px);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--prose);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--text);
+            background: var(--parchment);
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; }
+        img { display: block; max-width: 100%; }
+        p { margin-bottom: 1em; }
+        p:last-child { margin-bottom: 0; }
+
+        /* ===== TYPOGRAPHY UTILITIES ===== */
+        .eyebrow {
+            font-family: var(--ui);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--green-dark);
+            margin-bottom: 1.4rem;
+        }
+
+        .section-title em { font-style: italic; color: var(--gold); }
+
+        .lead {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            max-width: 62ch;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container { max-width: var(--w); margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2rem); }
+        .section { padding: var(--pad) clamp(1rem, 4vw, 2rem); }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 100;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 clamp(1rem, 4vw, 2.5rem);
+            transition: background 0.4s, box-shadow 0.4s;
+        }
+
+        .nav.solid {
+            background: rgba(21, 30, 10, 0.97);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 4px 24px rgba(0,0,0,0.35);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-brand svg { flex-shrink: 0; }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--ui);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            padding: 0.45rem 0.8rem;
+            border-radius: 4px;
+            letter-spacing: 0.03em;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+
+        .nav-cta {
+            background: var(--gold) !important;
+            color: var(--ink) !important;
+            font-weight: 700 !important;
+            margin-left: 0.5rem;
+        }
+
+        .nav-cta:hover { background: var(--gold-light) !important; }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            color: white;
+        }
+
+        /* ===== LANG SWITCHER ===== */
+        .lang-sw {
+            display: flex;
+            align-items: center;
+            gap: 0.15rem;
+            margin-left: 0.7rem;
+            padding-left: 0.7rem;
+            border-left: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid transparent;
+            color: rgba(255,255,255,0.38);
+            font-family: var(--ui);
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            padding: 0.22rem 0.48rem;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+            line-height: 1.6;
+        }
+
+        .lang-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.18); }
+
+        .lang-btn.active {
+            color: var(--gold-pale);
+            border-color: rgba(184,134,11,0.45);
+            background: rgba(184,134,11,0.08);
+        }
+
+        /* Mobile lang row */
+        .mob-lang {
+            display: flex;
+            gap: 0.5rem;
+            padding-top: 1.5rem;
+            margin-top: auto;
+        }
+
+        .mob-lang-btn {
+            flex: 1;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.45);
+            font-family: var(--ui);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            padding: 0.65rem 0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .mob-lang-btn.active { color: var(--gold-pale); border-color: rgba(184,134,11,0.5); background: rgba(184,134,11,0.07); }
+        .mob-lang-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.25); }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            height: 100svh;
+            min-height: 580px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background:
+                linear-gradient(170deg, #1E2D0F 0%, #2D4718 40%, #1A2E12 70%, #0E1808 100%);
+        }
+
+        .hero-bg img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            will-change: transform;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                linear-gradient(180deg,
+                    rgba(14,24,8,0.32) 0%,
+                    rgba(14,24,8,0.18) 40%,
+                    rgba(14,24,8,0.65) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 1.5rem;
+            max-width: 860px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--ui);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-pale);
+            border: 1px solid rgba(240, 216, 122, 0.35);
+            padding: 0.42rem 1.1rem;
+            border-radius: 2px;
+            margin-bottom: 1.75rem;
+            backdrop-filter: blur(6px);
+            background: rgba(0,0,0,0.18);
+        }
+
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: clamp(3rem, 8vw, 5.8rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.07;
+            margin-bottom: 1.1rem;
+            text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold-pale);
+        }
+
+        .hero-sub {
+            font-family: var(--prose);
+            font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+            font-style: italic;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-meta {
+            font-family: var(--ui);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 2.8rem;
+        }
+
+        .hero-meta a {
+            color: rgba(255,255,255,0.55);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 1px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .hero-meta a:hover { color: var(--gold-pale); border-color: var(--gold-pale); }
+
+        .hero-actions { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.78rem 1.9rem;
+            font-family: var(--ui);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+
+        .btn:hover { transform: translateY(-1px); }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--ink);
+        }
+        .btn-gold:hover { background: var(--gold-light); box-shadow: 0 6px 22px rgba(184,134,11,0.45); }
+
+        .btn-ghost {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border: 1.5px solid rgba(255,255,255,0.4);
+            backdrop-filter: blur(4px);
+        }
+        .btn-ghost:hover { background: rgba(255,255,255,0.17); border-color: rgba(255,255,255,0.7); }
+
+        .btn-green {
+            background: var(--green-mid);
+            color: var(--white);
+        }
+        .btn-green:hover { background: var(--green-light); box-shadow: 0 6px 22px rgba(46,71,24,0.45); }
+
+        /* ===== SCROLL ARROW ===== */
+        .scroll-down {
+            position: absolute;
+            bottom: 2.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--ui);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            animation: floatDown 2.2s ease-in-out infinite;
+        }
+
+        @keyframes floatDown {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            55% { transform: translateX(-50%) translateY(7px); }
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            background: var(--green-deep);
+            padding: 2.8rem clamp(1rem, 4vw, 2.5rem);
+        }
+
+        .stats-inner {
+            max-width: var(--w);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            border-right: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .stat:last-child { border-right: none; }
+
+        .stat-num {
+            font-family: var(--serif);
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+
+        .stat-lbl {
+            font-family: var(--ui);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ===== ABOUT ===== */
+        .about-wrap {
+            max-width: var(--w);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(3rem, 6vw, 6rem);
+            align-items: center;
+        }
+
+        .blockquote {
+            border-left: 3px solid var(--gold);
+            padding: 1rem 0 1rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .blockquote p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .blockquote cite {
+            display: block;
+            margin-top: 0.6rem;
+            font-style: normal;
+            font-family: var(--ui);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .about-photo {
+            position: relative;
+        }
+
+        .about-photo img {
+            width: 100%;
+            border-radius: 6px;
+            display: block;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+        }
+
+        .about-photo::before {
+            content: '';
+            position: absolute;
+            inset: 14px -14px -14px 14px;
+            border: 2px solid var(--gold);
+            border-radius: 6px;
+            z-index: -1;
+            opacity: 0.55;
+        }
+
+        /* ===== HISTORY ===== */
+        .history-section {
+            background: var(--green-deep);
+        }
+
+        .history-section .section-title { color: var(--white); }
+        .history-section .eyebrow { color: var(--gold-light); }
+        .history-section .lead { color: rgba(255,255,255,0.6); }
+
+        .timeline {
+            margin-top: clamp(3rem, 5vw, 5rem);
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-0.5px);
+            top: 0; bottom: 0;
+            width: 1px;
+            background: linear-gradient(180deg, var(--gold) 0%, rgba(184,134,11,0.05) 100%);
+        }
+
+        .tl-item {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 0;
+            margin-bottom: 3.5rem;
+            align-items: start;
+        }
+
+        .tl-left  { padding-right: 2rem; text-align: right; }
+        .tl-right { padding-left:  2rem; text-align: left; }
+        .tl-empty { /* spacer */ }
+
+        .tl-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 4px;
+            gap: 0.4rem;
+        }
+
+        .tl-dot {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--green-deep);
+            border: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tl-era {
+            font-family: var(--ui);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .tl-date {
+            font-family: var(--serif);
+            font-size: 0.8rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.3);
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .tl-content h3 {
+            font-family: var(--serif);
+            font-size: 1.35rem;
+            color: var(--gold-light);
+            margin-bottom: 0.65rem;
+            line-height: 1.3;
+        }
+
+        .tl-content p {
+            color: rgba(255,255,255,0.65);
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .tl-source {
+            display: inline-block;
+            margin-top: 0.8rem;
+            font-family: var(--ui);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.28);
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 0.2rem 0.55rem;
+            border-radius: 2px;
+        }
+
+        /* ===== CHURCH ===== */
+        .church-section { background: var(--parchment-2); }
+
+        .church-grid {
+            max-width: var(--w);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: clamp(3rem, 5vw, 5rem);
+            align-items: start;
+        }
+
+        .ev-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.6rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .ev-card-head {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .ev-tag {
+            font-family: var(--ui);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: var(--gold);
+            color: var(--ink);
+            padding: 0.18rem 0.5rem;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .ev-card h4 {
+            font-family: var(--serif);
+            font-size: 1rem;
+            color: var(--green-dark);
+        }
+
+        .ev-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.65;
+        }
+
+        .coords {
+            font-family: 'Courier New', monospace;
+            font-size: 0.78rem;
+            background: var(--green-dark);
+            color: var(--gold-pale);
+            padding: 0.65rem 1rem;
+            border-radius: 4px;
+            margin-top: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .map-frame {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 330px;
+            border: none;
+            display: block;
+        }
+
+        .map-cap {
+            background: var(--green-deep);
+            color: rgba(255,255,255,0.5);
+            font-family: var(--ui);
+            font-size: 0.68rem;
+            letter-spacing: 0.06em;
+            padding: 0.65rem 1rem;
+            text-align: center;
+        }
+
+        .sat-img {
+            margin-top: 1.4rem;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+        }
+
+        .sat-img img { width: 100%; display: block; }
+
+        .archeo-map-fig {
+            margin-top: 1.4rem;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .archeo-map-fig img { width: 100%; display: block; }
+
+        .archeo-map-fig figcaption {
+            padding: 1rem 1.1rem;
+            background: var(--parchment-2);
+            font-family: var(--ui);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .archeo-map-fig figcaption strong {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--green-dark);
+            margin-bottom: 0.55rem;
+        }
+
+        .archeo-map-fig figcaption em {
+            display: block;
+            margin-top: 0.65rem;
+            color: var(--stone);
+            font-size: 0.68rem;
+        }
+
+        .map-legend {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.28rem;
+        }
+
+        .map-legend li {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .ml-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            font-weight: 700;
+            font-size: 0.65rem;
+            background: var(--green-dark);
+            color: var(--gold-pale);
+            padding: 0.1rem 0.35rem;
+            border-radius: 2px;
+            flex-shrink: 0;
+            letter-spacing: 0.04em;
+        }
+
+        .ml-num.ml-church {
+            background: var(--gold);
+            color: var(--ink);
+        }
+
+        /* ===== VILLAGE ===== */
+        .village-section { background: var(--white); }
+
+        .village-grid {
+            max-width: var(--w);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(3rem, 5vw, 5rem);
+            align-items: start;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(184,134,11,0.07), rgba(184,134,11,0.03));
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 6px 6px 0;
+            padding: 1.4rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight p { margin: 0; line-height: 1.7; }
+
+        .tags-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .tag-pill {
+            font-family: var(--ui);
+            font-size: 0.78rem;
+            font-weight: 500;
+            background: var(--parchment);
+            border: 1px solid var(--stone-light);
+            color: var(--text);
+            padding: 0.32rem 0.75rem;
+            border-radius: 3px;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+            cursor: default;
+        }
+
+        .tag-pill:hover {
+            background: var(--green-dark);
+            color: var(--gold-pale);
+            border-color: var(--green-dark);
+        }
+
+        .info-box {
+            background: var(--green-deep);
+            border-radius: 8px;
+            padding: 1.8rem;
+            color: var(--white);
+        }
+
+        .info-box .eyebrow { color: var(--gold-light); }
+
+        .info-box p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ===== CHALLENGE ===== */
+        .challenge-section { background: var(--green-dark); color: var(--white); }
+        .challenge-section .section-title { color: var(--white); }
+        .challenge-section .eyebrow { color: var(--gold-light); }
+
+        .challenge-intro { color: rgba(255,255,255,0.62); max-width: 65ch; font-size: 1.05rem; }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin-top: 3rem;
+        }
+
+        .c-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(184,134,11,0.2);
+            border-radius: 6px;
+            padding: 1.6rem;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .c-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(184,134,11,0.45);
+        }
+
+        .c-icon { font-size: 1.6rem; margin-bottom: 0.9rem; }
+
+        .c-card h4 {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            color: var(--gold-light);
+            margin-bottom: 0.6rem;
+        }
+
+        .c-card p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.92rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .land-visual {
+            margin-top: 3rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+        }
+
+        .land-visual img { width: 100%; display: block; }
+
+        .land-cap {
+            background: rgba(0,0,0,0.4);
+            padding: 0.8rem 1.2rem;
+            font-family: var(--ui);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            color: rgba(255,255,255,0.45);
+            text-align: center;
+        }
+
+        /* ===== PROJECT ===== */
+        .project-section { background: var(--parchment); }
+
+        .project-wrap {
+            max-width: var(--w);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .prog-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.6rem;
+            position: sticky;
+            top: 80px;
+        }
+
+        .prog-card .eyebrow { color: var(--green-mid); margin-bottom: 0.4rem; }
+
+        .prog-status {
+            font-family: var(--serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--green-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .prog-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1.2rem;
+        }
+
+        .prog-bar-wrap {
+            background: var(--parchment-2);
+            border-radius: 4px;
+            height: 8px;
+            overflow: hidden;
+            margin-bottom: 0.4rem;
+        }
+
+        .prog-bar {
+            height: 100%;
+            width: 18%;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            border-radius: 4px;
+            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .prog-labels {
+            display: flex;
+            justify-content: space-between;
+            font-family: var(--ui);
+            font-size: 0.68rem;
+            color: var(--stone);
+        }
+
+        .proj-steps { list-style: none; }
+
+        .proj-step {
+            display: flex;
+            gap: 1.2rem;
+            position: relative;
+            padding-bottom: 2.4rem;
+        }
+
+        .proj-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 17px;
+            top: 38px;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-2);
+        }
+
+        .step-dot {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-family: var(--ui);
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            margin-top: 2px;
+        }
+
+        .step-dot.done    { background: var(--green-mid); color: var(--white); }
+        .step-dot.active  { background: var(--gold); color: var(--ink); box-shadow: 0 0 0 5px rgba(184,134,11,0.18); }
+        .step-dot.pending { background: var(--parchment-2); color: var(--stone); border: 2px solid var(--stone-light); }
+        .step-dot.goal    { background: var(--green-deep); color: var(--gold-light); border: 2px solid var(--gold); }
+
+        .step-body { padding-top: 4px; flex: 1; }
+
+        .step-when {
+            font-family: var(--ui);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .step-body h4 {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            color: var(--green-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .step-body p {
+            font-size: 0.93rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .alert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-family: var(--ui);
+            font-size: 0.67rem;
+            font-weight: 700;
+            background: rgba(185,74,44,0.1);
+            color: var(--terra);
+            border: 1px solid rgba(185,74,44,0.28);
+            padding: 0.22rem 0.55rem;
+            border-radius: 3px;
+            margin-top: 0.5rem;
+        }
+
+        /* ===== DONATE ===== */
+        .donate-section {
+            background: linear-gradient(155deg, var(--green-deep) 0%, var(--green-dark) 45%, #271A08 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .donate-section .section-title { color: var(--white); }
+        .donate-section .eyebrow { color: var(--gold-light); }
+
+        .donate-lead {
+            color: rgba(255,255,255,0.65);
+            font-size: 1.15rem;
+            max-width: 58ch;
+            margin: 0 auto 3.5rem;
+        }
+
+        .donate-group-label {
+            font-family: var(--ui);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin: 2.4rem 0 0.9rem;
+        }
+
+        .donate-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+            max-width: var(--w);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .donate-grid-natura {
+            grid-template-columns: repeat(4, 1fr);
+            margin-bottom: 3.5rem;
+        }
+
+        .donate-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(184,134,11,0.25);
+            border-radius: 8px;
+            padding: 2rem 1.4rem;
+            text-align: center;
+            transition: background 0.25s, border-color 0.25s, transform 0.25s;
+        }
+
+        .donate-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .donate-icon { font-size: 2rem; margin-bottom: 0.9rem; }
+
+        .share-strip {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(184,134,11,0.3);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 10px 10px 0;
+            padding: 1.8rem 2.2rem;
+            max-width: var(--w);
+            margin: 2.5rem auto 0;
+            transition: background 0.25s, border-color 0.25s;
+        }
+        .share-strip:hover { background: rgba(255,255,255,0.08); border-color: var(--gold); }
+        .share-strip-icon { font-size: 2.2rem; flex-shrink: 0; }
+        .share-strip-body h4 { font-size: 1.05rem; font-weight: 700; color: var(--gold-pale); margin-bottom: 0.35rem; }
+        .share-strip-body p { font-size: 0.92rem; color: rgba(255,255,255,0.72); line-height: 1.6; margin: 0; }
+
+        /* ── Paths / Community section ── */
+        .paths-section { background: var(--ink); }
+        .paths-lead {
+            font-size: 1.12rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.75;
+            max-width: 680px;
+            margin: 1.2rem auto 0;
+        }
+        .paths-converge {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 560px;
+            margin: 2.8rem auto 3rem;
+            border: 1px solid rgba(184,134,11,0.22);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .paths-village {
+            padding: 1.1rem 0.6rem;
+            text-align: center;
+            font-family: var(--ui);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.38);
+            border: 1px solid rgba(184,134,11,0.1);
+            cursor: default;
+            transition: background 0.2s, color 0.2s;
+        }
+        .paths-village:hover { background: rgba(184,134,11,0.07); color: rgba(255,255,255,0.72); }
+        .paths-church-node {
+            padding: 1.3rem 0.6rem;
+            text-align: center;
+            background: rgba(184,134,11,0.1);
+            border: 1px solid rgba(184,134,11,0.35);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+        }
+        .paths-church-cross { font-size: 1.5rem; line-height: 1; color: var(--gold); }
+        .paths-church-name {
+            font-family: var(--ui);
+            font-size: 0.56rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            line-height: 1.5;
+        }
+        .paths-narrative {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .paths-narrative p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.05rem;
+            line-height: 1.78;
+            margin-bottom: 1.2rem;
+        }
+        .paths-callout {
+            max-width: 680px;
+            margin: 2rem auto 0;
+            padding: 1.6rem 2rem;
+            border-left: 4px solid var(--gold);
+            background: rgba(184,134,11,0.07);
+            border-radius: 0 10px 10px 0;
+        }
+        .paths-callout p {
+            color: rgba(255,255,255,0.78);
+            font-size: 1.02rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+        .paths-callout strong { color: var(--gold-pale); }
+
+        /* ── Merged community section divider ── */
+        .community-divider {
+            position: relative;
+            text-align: center;
+            margin: 4.5rem auto;
+            color: rgba(184,134,11,0.5);
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+        .community-divider::before,
+        .community-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: calc(50% - 2.2rem);
+            height: 1px;
+        }
+        .community-divider::before {
+            left: 0;
+            background: linear-gradient(to right, transparent, rgba(184,134,11,0.28));
+        }
+        .community-divider::after {
+            right: 0;
+            background: linear-gradient(to left, transparent, rgba(184,134,11,0.28));
+        }
+        /* force left-aligned text inside the strip when parent is centered */
+        .share-strip { text-align: left; }
+
+        .donate-card h4 {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            color: var(--gold-light);
+            margin-bottom: 0.55rem;
+        }
+
+        .donate-card p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .donate-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .donate-note {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.32);
+            line-height: 1.6;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-section { background: var(--parchment-3); }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 0.75rem;
+            margin-top: 2.5rem;
+        }
+
+        .gal-item {
+            border-radius: 6px;
+            overflow: hidden;
+            background: var(--parchment-2);
+        }
+
+        .gal-item:first-child {
+            grid-row: span 2;
+        }
+
+        .gal-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.45s ease;
+        }
+
+        .gal-item:hover img { transform: scale(1.04); }
+
+        /* ===== VILLAGE EXTENDED ===== */
+        .village-dzemat-title {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            color: var(--green-dark);
+            margin: 1.8rem 0 0.3rem;
+        }
+
+        .dzemat-block {
+            border: 1px solid var(--border-2);
+            border-radius: 6px;
+            padding: 1rem 1.1rem;
+            margin-bottom: 0.75rem;
+            background: var(--white);
+        }
+
+        .dzemat-church {
+            border-color: rgba(184,134,11,0.4);
+            background: linear-gradient(135deg, rgba(184,134,11,0.05), rgba(255,255,255,0));
+        }
+
+        .dzemat-header {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .dzemat-icon { font-size: 1.1rem; }
+
+        .dzemat-name {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--green-dark);
+        }
+
+        .dzemat-loc {
+            font-family: var(--ui);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--stone);
+        }
+
+        .tag-pill-gold {
+            background: rgba(184,134,11,0.1);
+            border-color: rgba(184,134,11,0.4);
+            color: var(--green-dark);
+            font-weight: 600;
+        }
+
+        .origin-row {
+            display: flex;
+            gap: 0.65rem;
+            align-items: baseline;
+            padding: 0.45rem 0;
+            border-bottom: 1px solid var(--border-2);
+            font-size: 0.88rem;
+        }
+
+        .origin-row:last-of-type { border-bottom: none; }
+
+        .origin-era {
+            font-family: var(--ui);
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--stone);
+            white-space: nowrap;
+            min-width: 78px;
+            flex-shrink: 0;
+        }
+
+        .origin-row-uprising .origin-era { color: var(--gold); }
+        .origin-row-uprising { background: rgba(184,134,11,0.04); margin: 0 -0.5rem; padding-left: 0.5rem; padding-right: 0.5rem; border-radius: 3px; }
+
+        .origin-text { color: var(--text-muted); line-height: 1.5; }
+
+        /* ===== ŠUPLJA LIPA ===== */
+        .suplja-lipa-section {
+            background: radial-gradient(ellipse at 30% 60%, #0D1F28 0%, #060E0A 60%, #0A0A05 100%);
+            color: var(--white);
+        }
+
+        .sl-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: clamp(3rem, 5vw, 5rem);
+            align-items: start;
+        }
+
+        .sl-callout {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(240,216,122,0.15);
+            border-radius: 6px;
+            padding: 1.2rem;
+            margin-top: 1.4rem;
+        }
+
+        .sl-callout-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+
+        .sl-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .sl-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--ui);
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            text-decoration: none;
+            border: 1px solid rgba(212,168,32,0.3);
+            padding: 0.5rem 0.9rem;
+            border-radius: 4px;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .sl-link:hover {
+            background: rgba(212,168,32,0.08);
+            border-color: var(--gold-light);
+        }
+
+        .sl-mystery-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(240,216,122,0.2);
+            border-radius: 10px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            margin-bottom: 1.4rem;
+        }
+
+        .sl-icon-big { font-size: 3.5rem; margin-bottom: 1rem; }
+
+        .sl-fact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .sl-fact {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 5px;
+            padding: 0.8rem;
+        }
+
+        .sl-fact-label {
+            font-family: var(--ui);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .sl-fact-val {
+            font-family: var(--prose);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        @media (max-width: 768px) {
+            .sl-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--ink);
+            color: rgba(255,255,255,0.4);
+            padding: 3.5rem clamp(1rem, 4vw, 2.5rem);
+        }
+
+        .footer-inner {
+            max-width: var(--w);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 0.6rem;
+        }
+
+        footer p { font-size: 0.85rem; line-height: 1.7; }
+        footer a { color: var(--gold-light); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        .footer-h {
+            font-family: var(--ui);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 1rem;
+        }
+
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 0.4rem; }
+        footer ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+        footer ul li a:hover { color: var(--gold-light); text-decoration: none; }
+
+        .footer-divider {
+            max-width: var(--w);
+            margin: 2rem auto 1.5rem;
+            height: 1px;
+            background: rgba(255,255,255,0.07);
+        }
+
+        .footer-bottom {
+            max-width: var(--w);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--ui);
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.2);
+        }
+
+        /* ===== REVEAL ANIMATION ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s ease, transform 0.75s ease;
+        }
+
+        .reveal.in { opacity: 1; transform: translateY(0); }
+        .reveal.delay-1 { transition-delay: 0.1s; }
+        .reveal.delay-2 { transition-delay: 0.2s; }
+        .reveal.delay-3 { transition-delay: 0.3s; }
+
+        /* ===== TIMELINE ERA TAG (mobile label) ===== */
+        .tl-era-tag {
+            display: none;
+            font-family: var(--ui);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.35rem;
+        }
+
+        /* ===== MOBILE STICKY CTA ===== */
+        .mobile-donate-bar {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            z-index: 110;
+            padding: 0.85rem 1.25rem calc(0.85rem + env(safe-area-inset-bottom));
+            background: rgba(15,22,8,0.96);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(184,134,11,0.3);
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-donate-bar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.95rem 1rem;
+            background: var(--gold);
+            color: var(--ink);
+            font-family: var(--ui);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .mobile-donate-bar a:active { background: var(--gold-light); }
+
+        /* ===== MOBILE NAV OVERLAY ===== */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(14,22,8,0.98);
+            backdrop-filter: blur(20px);
+            z-index: 200;
+            flex-direction: column;
+            padding: clamp(1.5rem, 6vw, 2.5rem);
+            padding-top: calc(4.5rem + env(safe-area-inset-top));
+        }
+
+        .mobile-menu.open { display: flex; }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: calc(1rem + env(safe-area-inset-top));
+            right: 1.2rem;
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+            padding: 8px;
+            line-height: 1;
+        }
+
+        .mobile-menu nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            flex: 1;
+        }
+
+        .mobile-menu nav a {
+            font-family: var(--serif);
+            font-size: clamp(1.6rem, 6vw, 2.2rem);
+            font-weight: 600;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            transition: color 0.2s;
+            display: block;
+        }
+
+        .mobile-menu nav a:hover,
+        .mobile-menu nav a:active { color: var(--gold-pale); }
+
+        .mobile-menu nav a.mob-cta {
+            color: var(--gold-pale);
+            font-weight: 700;
+            border-bottom: none;
+            margin-top: 0.5rem;
+        }
+
+        .mobile-menu-foot {
+            padding-top: 1.5rem;
+            font-family: var(--ui);
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 0.08em;
+        }
+
+        /* ===== RESPONSIVE — TABLET (≤1024px) ===== */
+        @media (max-width: 1024px) {
+            .project-wrap { grid-template-columns: 1fr; gap: 3rem; }
+            .prog-card { position: static; }
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
+            .donate-grid { grid-template-columns: repeat(2, 1fr); }
+            .donate-grid-natura { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* ===== RESPONSIVE — LARGE MOBILE (≤768px) ===== */
+        @media (max-width: 768px) {
+            /* Global */
+            .section { padding: clamp(3rem, 9vw, 5rem) clamp(1.1rem, 5.5vw, 2rem); }
+            body { padding-bottom: 72px; } /* room for sticky CTA */
+
+            /* Nav */
+            .nav { padding: 0 clamp(1rem, 5vw, 1.5rem); min-height: 56px; }
+            .nav-links { display: none; }
+            .nav-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                border-radius: 6px;
+                transition: background 0.2s;
+            }
+            .nav-toggle:hover { background: rgba(255,255,255,0.08); }
+
+            /* Sticky mobile donate bar */
+            .mobile-donate-bar { display: block; }
+
+            /* Hero */
+            .hero-content { padding: 0 1.1rem; max-width: 100%; }
+            .hero h1 { font-size: clamp(2.2rem, 9.5vw, 3.4rem); }
+            .hero-sub { font-size: 1rem; margin-bottom: 1.6rem; }
+            .hero-meta { margin-bottom: 1.8rem; }
+            .hero-actions { flex-direction: column; align-items: center; gap: 0.6rem; }
+            .hero-actions .btn { width: min(100%, 300px); justify-content: center; min-height: 50px; font-size: 0.9rem; }
+            .hero-badge { font-size: 0.6rem; letter-spacing: 0.14em; padding: 0.38rem 0.9rem; }
+
+            /* Stats */
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .stat { padding: 1.1rem 0.75rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+            .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.07); }
+            .stat:nth-child(3), .stat:last-child { border-bottom: none; }
+            .stat-num { font-size: 2rem; }
+
+            /* About */
+            .about-wrap { grid-template-columns: 1fr; gap: 2rem; }
+            .about-photo { display: block; max-width: 320px; margin: 0 auto; }
+            .about-photo::before { display: none; }
+
+            /* Timeline — left-rail, flexbox rows */
+            .timeline::before { left: 19px; transform: none; }
+            .tl-era-tag { display: block; }
+            .tl-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 0;
+                margin-bottom: 2.2rem;
+            }
+            /* Always render dot first regardless of DOM order */
+            .tl-node {
+                order: 0;
+                flex-shrink: 0;
+                width: 40px;
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+                padding-top: 2px;
+            }
+            .tl-left, .tl-right {
+                order: 1;
+                flex: 1;
+                padding-left: 1.1rem;
+                padding-right: 0;
+                text-align: left;
+            }
+            .tl-dot { width: 38px; height: 38px; font-size: 1rem; }
+            .tl-era, .tl-date { display: none; }
+            .tl-empty { display: none; }
+            .tl-content h3 { font-size: 1.05rem; }
+            .tl-content p { font-size: 0.9rem; line-height: 1.7; }
+
+            /* Two-col grids → single col */
+            .church-grid, .village-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .sl-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+            /* Church map */
+            .map-frame iframe { height: 240px; }
+
+            /* Challenge cards */
+            .cards-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .c-card { padding: 1.4rem; }
+
+            /* Donate */
+            .donate-grid { grid-template-columns: repeat(2, 1fr); }
+            .donate-grid-natura { grid-template-columns: repeat(2, 1fr); margin-bottom: 2rem; }
+            .donate-card { padding: 1.4rem 1rem; }
+            .donate-lead { font-size: 0.98rem; margin-bottom: 2.5rem; }
+            .donate-group-label { margin-top: 1.8rem; }
+
+            /* Gallery — first item full-width, then 2-col */
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                gap: 0.5rem;
+            }
+            .gal-item:first-child {
+                grid-column: span 2;
+                grid-row: span 1;
+                aspect-ratio: 16 / 7;
+            }
+
+            /* Footer */
+            .footer-inner { grid-template-columns: 1fr; gap: 1.8rem; }
+            .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
+            footer { padding-bottom: calc(2rem + env(safe-area-inset-bottom)); }
+        }
+
+        /* ===== RESPONSIVE — SMALL MOBILE (≤480px) ===== */
+        @media (max-width: 480px) {
+            /* Hero */
+            .hero h1 { font-size: clamp(1.9rem, 10vw, 2.6rem); line-height: 1.1; }
+            .hero-badge { display: none; }
+
+            /* Stats — keep 2-col but tighter */
+            .stat-num { font-size: 1.7rem; }
+            .stat-lbl { font-size: 0.58rem; letter-spacing: 0.08em; }
+
+            /* Donate → single col */
+            .donate-grid { grid-template-columns: 1fr; }
+            .donate-grid-natura { grid-template-columns: 1fr; }
+            .donate-card { padding: 1.3rem 1rem; text-align: left; }
+            .donate-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+            .share-strip { flex-direction: column; align-items: flex-start; gap: 0.9rem; padding: 1.4rem 1.2rem; }
+            .paths-converge { max-width: 100%; }
+            .paths-village { padding: 0.9rem 0.4rem; font-size: 0.65rem; }
+            .paths-church-node { padding: 1rem 0.4rem; }
+            .paths-callout { padding: 1.2rem 1.2rem; }
+
+            /* Gallery → single col */
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gal-item:first-child { grid-column: span 1; aspect-ratio: 4 / 3; }
+
+            /* Šuplja Lipa fact grid */
+            .sl-fact-grid { grid-template-columns: 1fr; }
+
+            /* Village origin rows */
+            .origin-row { flex-direction: column; gap: 0.1rem; padding: 0.55rem 0; }
+            .origin-era { min-width: unset; }
+
+            /* Timeline */
+            .tl-dot { width: 34px; height: 34px; font-size: 0.9rem; }
+            .tl-node { width: 36px; }
+            .timeline::before { left: 17px; }
+            .tl-content h3 { font-size: 1rem; }
+
+            /* Dzemat blocks */
+            .dzemat-block { padding: 0.85rem; }
+        }
+
+        /* ===== RESPONSIVE — TINY (≤360px) ===== */
+        @media (max-width: 360px) {
+            .hero h1 { font-size: 1.75rem; }
+            .btn { padding: 0.75rem 1.2rem; font-size: 0.8rem; }
+            .section-title { font-size: clamp(1.6rem, 7vw, 2rem); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav class="nav" id="mainNav">
+    <a href="#" class="nav-brand">
+        <svg width="32" height="34" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Orthodox cross -->
+            <line x1="16" y1="1.5" x2="16" y2="17" stroke="#D4A820" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="9.5" y1="6" x2="22.5" y2="6" stroke="#D4A820" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="12" y1="11" x2="20" y2="11" stroke="#D4A820" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Hill silhouette -->
+            <path d="M 1,33 C 5,30 10,24 16,17 C 22,24 27,30 31,33" stroke="#D4A820" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- Subtle hill fill -->
+            <path d="M 1,33 C 5,30 10,24 16,17 C 22,24 27,30 31,33 L 31,34 L 1,34 Z" fill="#D4A820" opacity="0.08"/>
+        </svg>
+        Tusto Brdo
+    </a>
+    <ul class="nav-links">
+        <li><a href="#istorija" data-i18n="nav.h">Istorija</a></li>
+        <li><a href="#crkva"    data-i18n="nav.c">Crkva</a></li>
+        <li><a href="#pomozi"   data-i18n="nav.r">Zajednica</a></li>
+        <li><a href="#projekat" data-i18n="nav.p">Projekat</a></li>
+        <li><a href="#pomozi" class="nav-cta" data-i18n="nav.d">Pridruži se</a></li>
+    </ul>
+    <div class="lang-sw" role="group" aria-label="Jezik / Language">
+        <button class="lang-btn active" data-lang="cyr" title="Srpski ćirilica">Ћир</button>
+        <button class="lang-btn" data-lang="lat" title="Srpski latinica">Lat</button>
+        <button class="lang-btn" data-lang="en" title="English">EN</button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Meni">
+        <svg id="menuIcon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="19" y2="6"/>
+            <line x1="3" y1="11" x2="19" y2="11"/>
+            <line x1="3" y1="16" x2="19" y2="16"/>
+        </svg>
+    </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigacija">
+    <button class="mobile-menu-close" onclick="closeMobile()" aria-label="Zatvori meni">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="6" y1="6" x2="22" y2="22"/><line x1="22" y1="6" x2="6" y2="22"/>
+        </svg>
+    </button>
+    <nav>
+        <a href="#istorija" onclick="closeMobile()" data-i18n="nav.h">Istorija</a>
+        <a href="#crkva"    onclick="closeMobile()" data-i18n="nav.c">Crkva</a>
+        <a href="#pomozi"   onclick="closeMobile()" data-i18n="nav.r">Zajednica</a>
+        <a href="#projekat" onclick="closeMobile()" data-i18n="nav.p">Projekat</a>
+        <a href="#pomozi"   onclick="closeMobile()" class="mob-cta" data-i18n="nav.d.mob">Pridruži se ↗</a>
+    </nav>
+    <div class="mob-lang" role="group" aria-label="Jezik / Language">
+        <button class="mob-lang-btn active" data-lang="cyr">Ћирилица</button>
+        <button class="mob-lang-btn" data-lang="lat">Latinica</button>
+        <button class="mob-lang-btn" data-lang="en">English</button>
+    </div>
+    <div class="mobile-menu-foot">Crkva na Tustom Brdu · Robaje · Mionica</div>
+</div>
+
+<!-- Sticky mobile donate bar -->
+<div class="mobile-donate-bar">
+    <a href="#pomozi" data-i18n-html="mob.don">✝&#xFE0E;&ensp;Pridruži se projektu</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+    <div class="hero-bg">
+        <img
+            src="images/hero-landscape.jpg"
+            alt="Pogled na Tusto brdo, Robaje"
+            id="heroBg"
+            onerror="this.style.display='none'">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span>✦</span>
+            <span data-i18n="hero.badge">Robaje · Mionica · Zapadna Srbija</span>
+            <span>✦</span>
+        </div>
+
+        <h1 data-i18n-html="hero.h1">Crkva na<br><em>Tustom Brdu</em></h1>
+
+        <p class="hero-sub" data-i18n="hero.sub">Svetinja zatočena u šumi — čeka da ustane iz pepela</p>
+
+        <p class="hero-meta">
+            <a href="https://www.google.com/maps/place/%D0%A6%D1%80%D0%BA%D0%B2%D0%B0+%D0%BD%D0%B0+%D0%A2%D1%83%D1%81%D1%82%D0%BE%D0%BC+%D0%B1%D1%80%D0%B4%D1%83+-+%D0%BF%D0%BE%D1%80%D1%83%D1%88%D0%B5%D0%BD%D0%B0+1944./@44.2106581,19.9787481,1259m" target="_blank" rel="noopener">
+                ⊕&ensp;44.2092° N&nbsp;&nbsp;19.9810° E&nbsp;&nbsp;—&nbsp;&nbsp;<span data-i18n="hero.map">Prikaži na mapi</span>
+            </a>
+        </p>
+
+        <div class="hero-actions">
+            <a href="#projekat" class="btn btn-gold" data-i18n="hero.btn1">Prati projekat</a>
+            <a href="#pomozi"   class="btn btn-ghost" data-i18n="hero.btn2">Podržite obnovu</a>
+        </div>
+    </div>
+
+    <a href="#stats" class="scroll-down" aria-label="Skroluj dole">
+        <span>Saznaj više</span>
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 8 9 13 14 8"/>
+        </svg>
+    </a>
+</section>
+
+<!-- ═══════════ STATS ═══════════ -->
+<div class="stats-bar" id="stats">
+    <div class="stats-inner">
+        <div class="stat">
+            <div class="stat-num">3.500+</div>
+            <div class="stat-lbl" data-i18n="stat.1">Godina istorije</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">11.600</div>
+            <div class="stat-lbl" data-i18n="stat.2">m² površine lokacije</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">15 × 6</div>
+            <div class="stat-lbl" data-i18n="stat.3">Metara sačuvanih ostataka</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">2026</div>
+            <div class="stat-lbl" data-i18n="stat.4">Godina pokretanja projekta</div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section class="section" style="background: var(--parchment);">
+    <div class="about-wrap">
+        <div class="reveal">
+            <span class="eyebrow" data-i18n="about.eye">O lokaciji</span>
+            <h2 class="section-title" data-i18n-html="about.h2">Tusto Brdo —<br>brdo koje čuva tajne</h2>
+            <p class="lead" data-i18n="about.lead">Na istočnom vrhu Tustog brda, iznad sela Robaje u opštini Mionica, leže ostaci crkve porušene u Drugom svetskom ratu — i tragovi ljudskog prisustva koji sežu sve do bronzanog doba.</p>
+
+            <div class="blockquote">
+                <p>"Na istočnom vrhu Tustog brda, po priči V. Mijovića, nalaze se ostaci stare crkve razrušene u Drugom svetskom ratu. Očuvani ostaci su u gustom rastinje, dimenzija 15 × 6 m, visine 1 m. Prisutna je velika količina kamena i opeke."</p>
+                <cite>— Crnobrnja & Radivojević, Arheo. pregled SAD br. 1 (2003), str. 77 · lokalitet "Crkvine", Robaje</cite>
+            </div>
+
+            <p data-i18n="about.p">Tusto brdo zatvara Golubačko polje sa juga. Kraški predeo obilje karakateričnih oblika — vrtača, kamenih humki i starih šuma — vekovima je skrivao i čuvao tragove prošlih civilizacija. Lokalni meštani su znali za crkvu i, poštujući sveto mesto, nikada nisu obrađivali taj deo zemlje. Taj deo parcele ostao je pod šumom kao tiha, nesvesna straža nad svetinjem.</p>
+        </div>
+
+        <div class="about-photo reveal delay-2">
+            <img src="images/hero-landscape.jpg" alt="Pogled na Tusto brdo">
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ HISTORY ═══════════ -->
+<section class="section history-section" id="istorija">
+    <div class="container">
+        <div class="reveal">
+            <span class="eyebrow" data-i18n="hist.eye">Kroz vreme</span>
+            <h2 class="section-title" style="color: var(--white);" data-i18n="hist.h2">Hronologija mesta</h2>
+            <p class="lead" style="color: rgba(255,255,255,0.58);" data-i18n="hist.lead">Od bronzanodobskih humki do porušene crkve — Tusto brdo krije slojeve istorije koji sežu više od tri milenijuma unazad.</p>
+        </div>
+
+        <div class="timeline">
+
+            <!-- 1 -->
+            <div class="tl-item reveal">
+                <div class="tl-left">
+                    <div class="tl-content">
+                        <span class="tl-era-tag" data-i18n="tl.1.era">Praistorija · ~2000–1200. p.n.e.</span>
+                        <h3 data-i18n="tl.1">Bronzano doba — Kamene humke</h3>
+                        <p data-i18n="tl.1.p">Na lokalitetu <strong>Tusto brdo – Ravne vrtače</strong>, sistematskim rekognosciranjem 2003. pronađen je kompleks tri vrtače s kamenim humkama na obodima, sazidanim direktno na živu stenu. Iskopavanja humki 1 i 2 u okviru Letnje naučne škole Robaje 2003. pokazala su da se mogu vezati za <strong>kulturnu grupu Belotić–Bela Crkva</strong> — jednu od najznačajnijih kultura bronzanog doba u zapadnoj Srbiji.</p>
+                        <span class="tl-source">Crnobrnja & Radivojević, 2003 · lokaliteti 3a–3d</span>
+                    </div>
+                </div>
+                <div class="tl-node">
+                    <div class="tl-dot">🪨</div>
+                    <span class="tl-era">Praistorija</span>
+                    <span class="tl-date">~2000–1200. p.n.e.</span>
+                </div>
+                <div class="tl-empty tl-right"></div>
+            </div>
+
+            <!-- 2 -->
+            <div class="tl-item reveal">
+                <div class="tl-empty tl-left"></div>
+                <div class="tl-node">
+                    <div class="tl-dot">⚔️</div>
+                    <span class="tl-era">Srednji vek</span>
+                    <span class="tl-date">XIII–XVI vek</span>
+                </div>
+                <div class="tl-right">
+                    <div class="tl-content">
+                        <span class="tl-era-tag" data-i18n="tl.2.era">Srednji vek · XIII–XVI vek</span>
+                        <h3 data-i18n="tl.2">Srednji vek — Hrišćanska zajednica</h3>
+                        <p data-i18n="tl.2.p">U neposrednoj okolini Tustog brda evidentirano je više groblja. <em>Robajsko groblje</em> kod Petrašević nosi nadgrobne ploče s ornamentikom interpretiranom kao tip <strong>antropomorfnog krsta</strong>, datovane u XV–XVI vek. <em>Staro groblje</em> zasеoka Mijovići, smešteno unutar Robaja (x — 7418,800; y — 4897,125; z — 350), sadrži starije amorfe nadgrobne spomenike poput onih na Bukovačkom i Mađarskom groblju — ponegde poremećene mlađim ukopima, datirane u <strong>XIII–XVI vek</strong>. Obližnja groblja u Bukovcu sadrže iste tipove ploča — svedočanstvo kontinuiranog hrišćanskog prisustva kroz čitav srednji vek.</p>
+                        <span class="tl-source">Crnobrnja & Radivojević, 2003 · lokaliteti 9, 10, 12</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="tl-item reveal">
+                <div class="tl-left">
+                    <div class="tl-content">
+                        <span class="tl-era-tag" data-i18n="tl.3.era">Osmanski period · XVII–XVIII vek</span>
+                        <h3 data-i18n="tl.3">Osmansko doba — Turska nasedina</h3>
+                        <p data-i18n="tl.3.p">Na Beluškom brdu, u selu Mratišići, lokalna predanja govore o turskom naselju na zapadnoj strani brda. Do pre pedesetak godina, pri obradi njiva, na površinu su izlazili kamen, opeka i crep. Pominje se i slučajan nalaz zlatnika. Ovaj lokalitet svedoči o osmanskom prisustvu u neposrednoj blizini Tustog brda u XVII–XVIII veku.</p>
+                        <span class="tl-source">Crnobrnja & Radivojević, 2003 · lokalitet 13 "Beluško brdo"</span>
+                    </div>
+                </div>
+                <div class="tl-node">
+                    <div class="tl-dot">🕌</div>
+                    <span class="tl-era">Osmanski period</span>
+                    <span class="tl-date">XVII–XVIII vek</span>
+                </div>
+                <div class="tl-empty tl-right"></div>
+            </div>
+
+            <!-- 4 -->
+            <div class="tl-item reveal">
+                <div class="tl-empty tl-left"></div>
+                <div class="tl-node">
+                    <div class="tl-dot">🗡️</div>
+                    <span class="tl-era">Ustanci</span>
+                    <span class="tl-date">oko 1806.</span>
+                </div>
+                <div class="tl-right">
+                    <div class="tl-content">
+                        <span class="tl-era-tag" data-i18n="tl.4.era">Ustanci · oko 1806.</span>
+                        <h3 data-i18n="tl.4">Vreme ustanaka — Pomeni crkve</h3>
+                        <p data-i18n="tl.4.p">Usmena predanja govore da se crkva na Tustom brdu pominje još u vreme <strong>Prvog srpskog ustanka (1804–1813)</strong> — kao duhovno utočište i orijentir seoskog življenja u borbi za oslobođenje. Precizna arhivska dokumentacija iz tog perioda nije sačuvana, ali tradicija pamćenja ukazuje na njeno postojanje najkasnije od tog vremena.</p>
+                        <span class="tl-source">Usmeno predanje · nije arhivski potvrđeno</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4a -->
+            <div class="tl-item reveal">
+                <div class="tl-left">
+                    <div class="tl-content">
+                        <span class="tl-era-tag" data-i18n="tl.4a.era">Viševekovna istorija · razaranja i obnove</span>
+                        <h3 data-i18n="tl.4a">Ciklusi razaranja i obnove</h3>
+                        <p data-i18n="tl.4a.p">Jedno od razaranja crkve verovatno se dogodilo <strong>između Prvog srpskog ustanka i Prvog svetskog rata</strong>, ali ne možemo tvrditi da je to bilo jedino ni prvo. O ovome ne postoje pisani tragovi — sve potiče iz sećanja meštana.</p>
+                        <span class="tl-source">Sećanja meštana · bez pisanog zapisa</span>
+                    </div>
+                </div>
+                <div class="tl-node">
+                    <div class="tl-dot">🕰️</div>
+                    <span class="tl-era">XIX - XX vek</span>
+                    <span class="tl-date">posle 1813.</span>
+                </div>
+                <div class="tl-empty tl-right"></div>
+            </div>
+
+            <!-- 4b -->
+            <div class="tl-item reveal">
+                <div class="tl-empty tl-left"></div>
+                <div class="tl-node">
+                    <div class="tl-dot">⛏️</div>
+                    <span class="tl-era">Međuratni</span>
+                    <span class="tl-date">1918–1941.</span>
+                </div>
+                <div class="tl-right">
+                    <div class="tl-content">
+                        <span class="tl-era-tag" data-i18n="tl.4b.era">Međuratni period · 1918–1941.</span>
+                        <h3 data-i18n="tl.4b">Delimična obnova pre Drugog svetskog rata</h3>
+                        <p data-i18n="tl.4b.p">U međuratnom periodu pokušano je <strong>delimično vraćanje crkve u upotrebu</strong>, ali obnova nije bila završena. Po sećanjima meštana, radovi su izvedeni, no crkva nije dovedena do potpune funkcionalnosti pre narednih ratnih razaranja. Ni o ovim radovima ne postoje pisani tragovi: sve što znamo, znamo po predanju.</p>
+                        <span class="tl-source">Sećanja meštana · bez pisanog zapisa</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="tl-item reveal">
+                <div class="tl-left">
+                    <div class="tl-content">
+                        <span class="tl-era-tag" data-i18n="tl.5.era">II svetski rat · 1941. - 1944.</span>
+                        <h3 data-i18n="tl.5">Drugi svetski rat — Konačno razaranje</h3>
+                        <p data-i18n="tl.5.p">Crkva na Tustom brdu, delimično obnovljena u međuratnom periodu, <strong>konačno je razorena tokom Drugog svetskog rata</strong> — po svedočanstvima meštana, najverovanije oko <strong>1941. - 1944. godine</strong>. Sačuvani ostaci, zarasli u gustu vegetaciju, zabeleženi su 2003. na lokalitetu "Crkvine": dimenzije <strong>15 × 6 m, visina 1 m</strong>, s velikom količinom kamena i opeke. Meštani su svesno ostavili to tlo neobrađenim — znali su da je tu bila crkva.</p>
+                        <span class="tl-source">Crnobrnja & Radivojević, 2003 · svedočanstva meštana</span>
+                    </div>
+                </div>
+                <div class="tl-node">
+                    <div class="tl-dot">🔥</div>
+                    <span class="tl-era">II svetski rat</span>
+                    <span class="tl-date">1941. - 1944.</span>
+                </div>
+                <div class="tl-empty tl-right"></div>
+            </div>
+
+            <!-- 6 -->
+            <div class="tl-item reveal">
+                <div class="tl-empty tl-left"></div>
+                <div class="tl-node">
+                    <div class="tl-dot">📜</div>
+                    <span class="tl-era">Komunizam</span>
+                    <span class="tl-date">posle 1945.</span>
+                </div>
+                <div class="tl-right">
+                    <div class="tl-content">
+                        <span class="tl-era-tag" data-i18n="tl.6.era">Komunizam · posle 1945.</span>
+                        <h3 data-i18n="tl.6">Nacionalizacija — Zemlja u limbu</h3>
+                        <p data-i18n="tl.6.p">U periodu komunizma, zemlja na kojoj se nalaze ostaci crkve <strong>nacionalizovana</strong> je i postala deo parcele od gotovo 17 hektara — sa neobičnim oblikom granica. Tokom decenija, ta parcela je stekla oko 20 suvlasnika. Deo s crkvom nije se obrađivao — šuma koja ga pokriva bila je nenamerna, ali možda providonosna zaštita ostataka.</p>
+                        <span class="tl-source">Katastarski podaci · opština Mionica</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="tl-item reveal">
+                <div class="tl-left">
+                    <div class="tl-content">
+                        <span class="tl-era-tag" data-i18n="tl.7.era">Moderna nauka · 2003.</span>
+                        <h3 data-i18n="tl.7">Nauka dokumentuje tragove</h3>
+                        <p data-i18n="tl.7.p">U okviru <strong>Arheološke naučne škole Robaje 2003.</strong>, organizovane od strane Istraživačke stanice Petnica, tim pod vođstvom Adam N. Crnobrnje i Miljanе Radivojević sproveo je sistematsko rekognosciranje. Pored praistorijskih humki, dokumentovani su ostaci crkve na lokalitetu "Crkvine" (br. 14). Rad je objavljen u Arheološkom pregledu Srpskog arheološkog društva 1 (Beograd, 2006).</p>
+                        <span class="tl-source">Crnobrnja & Radivojević, Arh. pregled SAD 1 (2003/2006), str. 71–77</span>
+                    </div>
+                </div>
+                <div class="tl-node">
+                    <div class="tl-dot">🔍</div>
+                    <span class="tl-era">Moderna nauka</span>
+                    <span class="tl-date">2003.</span>
+                </div>
+                <div class="tl-empty tl-right"></div>
+            </div>
+
+            <!-- 8 -->
+            <div class="tl-item reveal">
+                <div class="tl-empty tl-left"></div>
+                <div class="tl-node">
+                    <div class="tl-dot">✝️</div>
+                    <span class="tl-era">Obnova</span>
+                    <span class="tl-date">2026. →</span>
+                </div>
+                <div class="tl-right">
+                    <div class="tl-content">
+                        <h3 data-i18n="tl.8">Danas — Projekat obnove počinje</h3>
+                        <p data-i18n="tl.8.p">Nakon više od 80 godina, pokrenut je projekat vraćanja svetog mesta na Tustom Brdu. Prve konkretne pravne i vlasničke korake napravili smo tokom maja 2026. Zemlja je pronađena, vlasnik identifikovan, dogovor postignut — sada sledi složen administrativni put, a potom i obnova crkve.</p>
+                        <span class="tl-source">Aktuelni projekat · maj 2026.</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ CHURCH ═══════════ -->
+<section class="section church-section" id="crkva">
+    <div class="church-grid reveal">
+        <div>
+            <span class="eyebrow" data-i18n="church.eye">Svetinja</span>
+            <h2 class="section-title" data-i18n="church.h2">Šta znamo o crkvi</h2>
+            <p class="lead" style="max-width: none;" data-i18n="church.lead">Crkva na Tustom brdu nije ostala samo u sećanju meštana — njeni tragovi postoje i danas, dokumentovani i arhivski i naučno.</p>
+
+            <div class="ev-card" style="margin-top: 2rem;">
+                <div class="ev-card-head">
+                    <span class="ev-tag" data-i18n="church.tag1">Fizički ostaci</span>
+                    <h4 data-i18n="church.ev1h">Zidovi koji i dalje stoje</h4>
+                </div>
+                <p data-i18n="church.ev1p">Dokumentovani 2003. godine: ostaci dimenzija <strong>15 × 6 metara</strong>, visine do 1 metar, skriveni u gustoj vegetaciji na istočnom vrhu Tustog brda. Velika količina kamena i opeke potvrđuje solidnu građevinsku konstrukciju.</p>
+                <div class="coords">
+                    Koordinate: x — 7418,750 · y — 4896,525 · z — 450<br>
+                    Lokalitet "Crkvine" br. 14 · Robaje, opština Mionica
+                </div>
+            </div>
+
+            <div class="ev-card">
+                <div class="ev-card-head">
+                    <span class="ev-tag" data-i18n="church.tag2">Naučna literatura</span>
+                    <h4 data-i18n="church.ev2h">Arhivska potvrda</h4>
+                </div>
+                <p data-i18n="church.ev2p">Lokalitet "Crkvine" (br. 14) zaveden je u naučnu literaturu u radu: <em>Crnobrnja A.N. & Radivojević M., Arheološka karta Bukovca i okoline</em>, Arheološki pregled Srpskog arheološkog društva, br. 1, Beograd 2003/2006, str. 71–77.</p>
+            </div>
+
+            <div class="ev-card">
+                <div class="ev-card-head">
+                    <span class="ev-tag" data-i18n="church.tag3">Usmeno predanje</span>
+                    <h4 data-i18n="church.ev3h">Svedočanstvo V. Mijovića</h4>
+                </div>
+                <p data-i18n="church.ev3p">Podatak o crkvi i njenom rušenju potekao je od V. Mijovića, lokalnog kazivača, i potvrđen uvidom u teren. Meštani koji su znali za crkvu svesno su ostavili taj deo zemljišta neobrađenim — zemlja je čuvala uspomenu na svetinju.</p>
+            </div>
+
+            <div class="ev-card">
+                <div class="ev-card-head">
+                    <span class="ev-tag" data-i18n="church.tag4">Kontekst</span>
+                    <h4 data-i18n="church.ev4h">Praistorijska svetost mesta</h4>
+                </div>
+                <p data-i18n="church.ev4p">Nedaleko od crkve, na istom brdu, evidentirane su bronzanodobske kamene humke (<em>~2000–1200. p.n.e.</em>) — što ukazuje na ritualnu važnost ovog prostora kroz milenijume. Hrišćanske crkve su kroz istoriju često podizane upravo na ranije svetim mestima.</p>
+            </div>
+        </div>
+
+        <div>
+
+            <figure class="archeo-map-fig">
+                <img src="images/archeo-map-07.png" alt="Karta arheoloških lokaliteta — Bukovac i Robaje, 2003." loading="lazy">
+                <figcaption>
+                    <strong>Karta lokaliteta</strong> · Arheološko rekognosciranje Bukovca i okoline, 2003.
+                    <ul class="map-legend">
+                        <li><span class="ml-num">3a–3d</span> Tusto brdo – Ravne vrtače · bronzanodobske kamene humke</li>
+                        <li><span class="ml-num ml-church">14</span> Crkvine · ostaci crkve porušene u II sv. ratu</li>
+                        <li><span class="ml-num">11</span> Staro groblje · Mijovići · XIII–XVI vek</li>
+                        <li><span class="ml-num">12</span> Robajsko groblje · Petrašević · XV–XVI vek</li>
+                        <li><span class="ml-num">4</span> Humka kod Hajdučkog groblja · bronzano doba</li>
+                        <li><span class="ml-num">5</span> Humka kod tora · bronzano doba</li>
+                        <li><span class="ml-num">6</span> Vrtača kod Petrašević · bronzano doba</li>
+                    </ul>
+                    <em>Izvor: Crnobrnja & Radivojević, Arheo. pregled SAD 1 (2003/2006), str. 72</em>
+                </figcaption>
+            </figure>
+
+
+            <div class="map-frame">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1248.8!2d19.9797!3d44.2092448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759ef0006260bf7%3A0x867acbb599c76a34!2z0KbRgNC60LLQsCDQvdCwINGC0YPRgdGC0L7QvCDQsdGA0LTRgyAtINC_0L7RgNGD0YjQtdC90LAgMTk0NC4!5e1!3m2!1ssr!2srs!4v1718900000000!5m2!1ssr!2srs"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Crkva na Tustom brdu — Google Maps">
+                </iframe>
+                <div class="map-cap" data-i18n="church.mapcap">📍 Crkva na Tustom brdu · porušena 1941 - 1944. · Robaje, Mionica</div>
+            </div> 
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ VILLAGE ═══════════ -->
+<section class="section village-section" id="robaje" style="display:none">
+    <div class="village-grid">
+        <div class="reveal">
+            <span class="eyebrow" data-i18n="vil.eye">Naše selo</span>
+            <h2 class="section-title" data-i18n-html="vil.h2">Robaje — Poreklo<br>i zajednica</h2>
+            <p class="lead" data-i18n="vil.lead">Porodice koje danas žive u Robajama nose korene duboke tri i po veka — iz Hercegovine, Crne Gore, Stare Srbije i Polimlja. Gotovo sve dostigle su ove krajeve kao doseljenici, a svima je crkva na Tustom brdu bila i ostala zajednička svetinja.</p>
+
+            <div class="highlight" style="border-left-color: var(--terra);">
+                <p data-i18n-html="vil.hl"><strong>Usmeno predanje pamti da je crkva na Tustom brdu bila živa u vreme Prvog srpskog ustanka (1804–1813).</strong> Tada su u Robajama već živele gotovo sve porodice koje tu žive i danas. <strong>Crkvu su gradili, obnavljali i čuvali preci sadašnjih meštana.</strong> Više od 80 godina to sećanje živelo je bez svetinje. <strong>Sada je na svima nama da je vratimo.</strong></p>
+            </div
+
+            <h3 class="village-dzemat-title" data-i18n="vil.dzemat.h">Džemati i porodice Robaja</h3>
+            <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1.2rem;" data-i18n-html="vil.dzemat.p">Robaje su selo razbijenoga tipa, sa kućama grupisanim u tri džemata. Prema knjizi Ljubomira Pavlovića <em>Kolubara i Podgorina</em> (1907), preneseno na <a href="https://www.poreklo.rs/2013/05/09/poreklo-prezimena-selo-robaje-mionica/" target="_blank" rel="noopener" style="color: var(--green-mid); font-weight: 600; text-decoration: underline;" data-notrans>poreklo.rs</a>.</p>
+
+            <div class="dzemat-block">
+                <div class="dzemat-header">
+                    <span class="dzemat-icon">🏘️</span>
+                    <div>
+                        <div class="dzemat-name">Dragojevići</div>
+                        <div class="dzemat-loc">Ispod Jezdinca</div>
+                    </div>
+                </div>
+                <div class="tags-wrap">
+                    <span class="tag-pill">Dragojevići</span>
+                    <span class="tag-pill">Marijići</span>
+                    <span class="tag-pill">Savići</span>
+                    <span class="tag-pill">Petraševići</span>
+                </div>
+            </div>
+
+            <div class="dzemat-block">
+                <div class="dzemat-header">
+                    <span class="dzemat-icon">🏘️</span>
+                    <div>
+                        <div class="dzemat-name">Mijatovići</div>
+                        <div class="dzemat-loc">Sredina sela</div>
+                    </div>
+                </div>
+                <div class="tags-wrap">
+                    <span class="tag-pill">Markovići</span>
+                    <span class="tag-pill">Mijatovići</span>
+                    <span class="tag-pill">Rađići</span>
+                    <span class="tag-pill">Brekovići (Pavići)</span>
+                    <span class="tag-pill">Perići</span>
+                    <span class="tag-pill">Mojovići</span>
+                    <span class="tag-pill">Pejići</span>
+                    <span class="tag-pill">Marinkovići</span>
+                    <span class="tag-pill">Gavrilovići</span>
+                </div>
+            </div>
+
+            <div class="dzemat-block">
+                <div class="dzemat-header">
+                    <span class="dzemat-icon">🏘️</span>
+                    <div>
+                        <div class="dzemat-name">Pod Tustim brdom</div>
+                        <div class="dzemat-loc">Stepančevići · Bojnovići</div>
+                    </div>
+                </div>
+                <div class="tags-wrap">
+                    <span class="tag-pill">Žužići (Žugići / Žigići / Jakovljevići)</span>
+                    <span class="tag-pill">Stepančevići</span>
+                    <span class="tag-pill">Živkovići</span>
+                    <span class="tag-pill">Mijovići</span>
+                    <span class="tag-pill">Zekići</span>
+                    <span class="tag-pill">Madžuni</span>
+                    <span class="tag-pill">Jankovići</span>
+                    <span class="tag-pill">Bajići</span>
+                    <span class="tag-pill">Tešići</span>
+                    <span class="tag-pill">Bojnovići</span>
+                </div>
+            </div>
+
+            <div class="highlight" style="margin-top: 1.5rem;">
+                <p data-i18n-html="vil.hl2">Prepoznajete li neko od ovih prezimena kao svoje? Svako ko potiče iz Robaja — ili čija porodica nosi sećanje na crkvu — deo je ove priče. <strong>Javite nam se.</strong></p>
+            </div>
+        </div>
+
+        <div class="reveal delay-2">
+            <div class="info-box">
+                <span class="eyebrow" data-i18n="vil.geo.eye">Geografija</span>
+                <p data-i18n="vil.geo1"><strong style="color: var(--white);">Robaje</strong> su na visoravni koja se iz Dračića pruža preko Žabara. Zemlja je sa vrtačama i kamenitim dnom ili crljenicom. Vrtače su poređane u nizove i pružaju se prema Rajkoviću. Nekoliko vrtača ispunjeno je atmosferskom vodom i zovu se <strong style="color: var(--gold-light);">jezera</strong> — od kojih su najlepše Dubokača (duga 45m, nikad ne presušuje) i Jezero u Bunčevici.</p>
+                <p style="margin-top: 0.8rem;" data-i18n="vil.geo2">Glavne uzvisine sela su: Jezdinac, Ploča, <strong style="color: var(--gold-light);">Tusto Brdo</strong> (prema Mratišiću), Bogoljenac i Bunčevica. Jedina reka je Lepenica, sa zapadne strane sela. U unutrašnjosti nema potoka — atmosferska voda ponire u vrtače.</p>
+                <p style="margin-top: 0.8rem;" data-i18n="vil.geo3">Na istočnoj padini Tustog brda, uz samu crkvu, nalazi se izvor <strong style="color: var(--gold-light);">Spasovina</strong> — danas poznatiji kao <strong style="color: var(--gold-light);">Robajska česma</strong>. Nije slučajno što izvor nosi ime Spasa: <strong style="color: var(--white);">Spasovdan (Vaznesenje Gospodnje) je slava Robaja</strong> — zajednička svetinja celoga sela, čiji se koren pamti kroz i u imenu izvora ispod crkve.</p>
+                <p style="margin-top: 0.8rem; font-size: 0.85rem; color: rgba(255,255,255,0.45); font-style: italic;">Izvor: Lj. Pavlović, Kolubara i Podgorina, 1907.</p>
+            </div>
+
+            <div style="margin-top: 1.4rem; background: var(--parchment-2); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem;">
+                <span class="eyebrow" style="color: var(--green-mid);" data-i18n="vil.origins.eye">Tri stotine godina doseljenih korena</span>
+
+                <div class="origin-row">
+                    <span class="origin-era">XVII vek</span>
+                    <span class="origin-text"><strong>Žužići, Gavrilovići, Marinkovići</strong> — iz Čeva u Crnoj Gori (Drobnjaci). Slava: Aranđelovdan.</span>
+                </div>
+                <div class="origin-row">
+                    <span class="origin-era">XVII vek</span>
+                    <span class="origin-text"><strong>Stepančevići, Živkovići</strong> — iz Negbine kod Nove Varoši. Slava: Nikoljdan.</span>
+                </div>
+                <div class="origin-row">
+                    <span class="origin-era">Opšta seoba</span>
+                    <span class="origin-text"><strong>Mijatovići, Rađići</strong> — iz Nikšićke Župe. Slava: Lučindan.</span>
+                </div>
+                <div class="origin-row">
+                    <span class="origin-era">Pre 1788.</span>
+                    <span class="origin-text"><strong>Dragojevići, Savići, Marijići</strong> — iz Drobnjaka (bratstvo Malović). Slava: Đurđevdan.</span>
+                </div>
+                <div class="origin-row">
+                    <span class="origin-era">Pre 1788.</span>
+                    <span class="origin-text"><strong>Madžuni, Jankovići, Tešići</strong> — iz Ljutića u Polimlja. Slava: Đurđevdan.</span>
+                </div>
+                <div class="origin-row">
+                    <span class="origin-era">Pre 1788.</span>
+                    <span class="origin-text"><strong>Petrašević</strong> — iz okoline Kolašina. Slava: Nikoldan.</span>
+                </div>
+                <div class="origin-row">
+                    <span class="origin-era">Pre 1788.</span>
+                    <span class="origin-text"><strong>Bojnovići</strong> — iz Kričke. Slava: Aranđelovdan.</span>
+                </div>
+                <div class="origin-row origin-row-uprising">
+                    <span class="origin-era">1804–1813. ✝</span>
+                    <span class="origin-text"><strong>Markovići (Limci)</strong> — iz Bistrice u Polimlja. Slava: Lučindan.</span>
+                </div>
+                <div class="origin-row origin-row-uprising">
+                    <span class="origin-era">1804–1813. ✝</span>
+                    <span class="origin-text"><strong>Brekovići (Pavići)</strong> — iz Brekova u Starom Vlahu. Slava: Ilindan.</span>
+                </div>
+                <div class="origin-row origin-row-uprising">
+                    <span class="origin-era">1804–1813. ✝</span>
+                    <span class="origin-text"><strong>Pejići</strong> — iz Kosatice kod Prijepolja. Slava: Jovanjdan.</span>
+                </div>
+                <div class="origin-row">
+                    <span class="origin-era">Noviji</span>
+                    <span class="origin-text"><strong>Perići, Mojovići</strong> — iz Polimlja i Nikšićke Župe.</span>
+                </div>
+                <p style="margin-top: 0.8rem; font-size: 0.7rem; color: var(--stone); font-style: italic; line-height: 1.5;">✝ Doseljenici iz doba Prvog srpskog ustanka — u čije vreme usmeno predanje beleži i samu crkvu na Tustom brdu.<br>Izvor: Lj. Pavlović, Kolubara i Podgorina (1907) · via <span data-notrans>poreklo.rs</span></p>
+            </div>
+
+            <div style="margin-top: 1.4rem; background: var(--parchment-2); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; padding: 1.2rem 1.4rem;">
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; margin: 0;" data-i18n-html="vil.census">Prema popisu iz 1900. Robaje su imale <strong>90 domova i 587 stanovnika</strong> u 12 porodičnih loza. Ime sela je staro — pominje se već 1737. u spisku sela Okruga valjevskog, a prethodi mu legenda o kugi koja je "porobila" selo i ostavila pustoš.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- #zajednica merged into #pomozi below -->
+
+<!-- ═══════════ ŠUPLJA LIPA ═══════════ -->
+<section class="section suplja-lipa-section" style="display:none">
+    <div class="container">
+        <div class="sl-grid reveal">
+            <div class="sl-text">
+                <span class="eyebrow" style="color: var(--gold-light);" data-i18n="lipa.eye">Tajna ispod brda</span>
+                <h2 class="section-title" style="color: var(--white);" data-i18n-html="lipa.h2">Šuplja Lipa —<br><em style="color: var(--gold-pale);">podzemna nepoznanica</em></h2>
+                <p class="lead" style="color: rgba(255,255,255,0.65); max-width: none;" data-i18n="lipa.lead">Na Tustom brdu krije se još jedna tajna — ovog puta podzemna. Šuplja Lipa je speleološki objekat u selu Robaje za koji se veruje da je <strong style="color: var(--gold-light);">povezan sa sistemom Petničke pećine</strong> — jedne od najdužih istraživanih pećina u ovom delu Srbije.</p>
+
+                <p style="color: rgba(255,255,255,0.6); margin-top: 1rem; font-size: 1rem;" data-i18n-html="lipa.p2">Naziv "Šuplja Lipa" — šuplja lipa drveta, prirodni otvor koji vodi u podzemlje — ukazuje na karakteristiku ulaza u objekat. Mionica turizam opisuje ovo mesto kao "<em>sasvim neobično</em>" i poziva posetioce da ostave svakodnevicu za sobom.</p>
+
+                <div class="sl-callout">
+                    <div class="sl-callout-icon">🔦</div>
+                    <div>
+                        <p style="color: var(--gold-pale); font-family: var(--serif); font-size: 1.05rem; margin-bottom: 0.3rem; font-weight: 600;" data-i18n="lipa.callout1h">Moguća veza sa Petničkom pećinom</p>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin: 0;" data-i18n="lipa.callout1p">Petnička pećina kod Valjeva duga je oko 600 metara istraženih kanala, sa Gornjom i Donjom pećinom i više komora. Speleolozi koji su istraživali Šuplju Lipu uočili su potencijalne hidro-geološke veze između ova dva sistema u okviru krškog terena Maljena i Podgorine.</p>
+                    </div>
+                </div>
+
+                <div class="sl-callout" style="border-color: rgba(240,216,122,0.2);">
+                    <div class="sl-callout-icon">🏛️</div>
+                    <div>
+                        <p style="color: var(--gold-pale); font-family: var(--serif); font-size: 1.05rem; margin-bottom: 0.3rem; font-weight: 600;" data-i18n="lipa.callout2h">Derinkuyu pod Tustim brdom?</p>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin: 0;" data-i18n="lipa.callout2p">Podzemni grad Derinkuyu u Kapadokiji (Turska) — hiljadugodišnje sklonište uklesano u kamen, nepoznato modernom svetu sve do 1963. — podseća na pitanje koje se nameće: šta se zaista krije ispod Tustog brda? Robajaši koji su tamo živeli decenijama možda nisu ni svesni razmere onoga što postoji ispod njihovih nogu. Sistematsko speleološko istraživanje ove oblasti još uvek nije sprovedeno.</p>
+                    </div>
+                </div>
+
+                <div class="sl-links">
+                    <a href="https://www.facebook.com/mionicaturizam/photos/1161657985975363/" target="_blank" rel="noopener" class="sl-link">
+                        <span>📸</span> Mionica Turizam — fotografije Šuplje Lipe
+                    </a>
+                    <a href="https://sima-pecinar.smugmug.com/Speleologija-Speleology/Suplja-Lipa" target="_blank" rel="noopener" class="sl-link">
+                        <span>🔍</span> Speleološka dokumentacija — Zoran Simić
+                    </a>
+                    
+                </div>
+            </div>
+
+            <div class="sl-visual reveal delay-2">
+                <div class="sl-mystery-box">
+                    <div class="sl-mystery-inner">
+                        <div class="sl-icon-big">🕳️</div>
+                        <p style="font-family: var(--serif); font-size: 1.4rem; color: var(--gold-pale); margin-bottom: 0.5rem; font-style: italic;">"Sasvim neobično mesto"</p>
+                        <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">— Mionica Turizam o Šupljoj Lipi</p>
+                    </div>
+                </div>
+                <div class="sl-fact-grid">
+                    <div class="sl-fact">
+                        <div class="sl-fact-label" data-i18n="lipa.fact1l">Lokacija</div>
+                        <div class="sl-fact-val" data-i18n="lipa.fact1v">Tusto brdo · Robaje</div>
+                    </div>
+                    <div class="sl-fact">
+                        <div class="sl-fact-label" data-i18n="lipa.fact2l">Tip</div>
+                        <div class="sl-fact-val" data-i18n="lipa.fact2v">Speleološki objekat</div>
+                    </div>
+                    <div class="sl-fact">
+                        <div class="sl-fact-label" data-i18n="lipa.fact3l">Veza</div>
+                        <div class="sl-fact-val" data-i18n="lipa.fact3v">Petnička pećina sistem</div>
+                    </div>
+                    <div class="sl-fact">
+                        <div class="sl-fact-label" data-i18n="lipa.fact4l">Istraženost</div>
+                        <div class="sl-fact-val" data-i18n="lipa.fact4v">Delimično · potrebna ekspedicija</div>
+                    </div>
+                </div>
+                <p style="font-family: var(--ui); font-size: 0.7rem; color: rgba(255,255,255,0.25); text-align: center; margin-top: 1rem; line-height: 1.5;">Fotografska dokumentacija: Zoran Simić (Sima Pećinar)<br>Izvor: sima-pecinar.smugmug.com</p>
+                <img src="images/suplja_lipa.png" alt="Šuplja Lipa" loading="lazy">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ CHALLENGE ═══════════ -->
+<section class="section challenge-section">
+    <div class="container">
+        <div class="reveal">
+            <span class="eyebrow" data-i18n="chal.eye">Izazov</span>
+            <h2 class="section-title" data-i18n="chal.h2">Zemlja koja se vraća</h2>
+            <p class="challenge-intro" data-i18n="chal.lead">Put do obnove crkve nije samo duhovni — on prolazi kroz katastarske knjige, suvlasničke sporazume i administrativne procese. Svaki korak je važan i neophodan.</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="c-card reveal">
+                <div class="c-icon">📐</div>
+                <h4 data-i18n="chal.c1h">Parcela od ~17 hektara</h4>
+                <p data-i18n-html="chal.c1p">Zemlja na kojoj se nalazi crkva deo je velike parcele neobičnih granica, površine skoro 17 hektara — nacionalizovane tokom komunizma. Sama lokacija crkve iznosi oko <strong style="color: var(--gold-light);">11.600 m²</strong>.</p>
+            </div>
+            <div class="c-card reveal delay-1">
+                <div class="c-icon">👥</div>
+                <h4 data-i18n="chal.c2h">Oko 20 suvlasnika</h4>
+                <p data-i18n="chal.c2p">Tokom decenija, parcela je stekla oko 20 suvlasnika. Za formalno odvajanje dela sa crkvom potrebna je saglasnost svih suvlasnika — složen, ali savladiv proces uz dobru volju zajednice.</p>
+            </div>
+            <div class="c-card reveal delay-2">
+                <div class="c-icon">✅</div>
+                <h4 data-i18n="chal.c3h">Vlasnik pronađen</h4>
+                <p data-i18n-html="chal.c3p">Vlasnik dela parcele na kome se nalazi crkva je identifikovan i dogovor je postignut. Predugovor je potpisan uz kaparu <strong style="color: var(--gold-light);">29. maja 2026.</strong></p>
+            </div>
+            <div class="c-card reveal">
+                <div class="c-icon">⏳</div>
+                <h4 data-i18n="chal.c4h">Katastar u procesu</h4>
+                <p data-i18n="chal.c4p">Vlasnik je imao teret na zemljištu koji je izmiren. Trenutno se čeka administrativno brisanje tereta i upis u katastar Republike Srbije.</p>
+            </div>
+            <div class="c-card reveal delay-1">
+                <div class="c-icon">📏</div>
+                <h4 data-i18n="chal.c5h">Geometar i deoba</h4>
+                <p data-i18n="chal.c5p">Sledeći korak: geometar meri tačan deo parcele za crkvu i priprema elaborat za formalno izdvajanje. Potom sledi saglasnost suvlasnika i prenos na Srpsku Pravoslavnu Crkvu.</p>
+            </div>
+            <div class="c-card reveal delay-2">
+                <div class="c-icon">🌿</div>
+                <h4 data-i18n="chal.c6h">Teren ide napred</h4>
+                <p data-i18n="chal.c6p">Dok administracija teče, mogu početi terenska istraživanja — pronalaženje tačnih temelja crkve ispod šumskog pokrivača. Zemlja čuva tragove koji čekaju da budu otkriveni.</p>
+            </div>
+        </div>
+
+        <div class="land-visual reveal">
+            <img src="images/satellite-map.png" alt="Katastarski prikaz parcele" onerror="this.parentElement.style.display='none'">
+            <div class="land-cap" data-i18n="chal.cap">Katastarski prikaz lokacije · Parcele 905 · KO Robaje, opština Mionica</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ PROJECT ═══════════ -->
+<section class="section project-section" id="projekat">
+    <div class="container">
+        <div class="project-wrap">
+            <div>
+                <span class="eyebrow reveal" data-i18n="proj.eye">Projekat obnove</span>
+                <h2 class="section-title reveal" data-i18n="proj.h2">Koraci koji vode obnovi</h2>
+                <p class="lead reveal" style="max-width: none;" data-i18n="proj.lead">Svaki potpisani dokument, svaki administrativni korak i svaki dan rada na terenu — deo su jednog cilja: da crkva na Tustom brdu ponovo stoji.</p>
+
+                <ul class="proj-steps reveal" style="margin-top: 3rem;">
+                    <li class="proj-step">
+                        <div class="step-dot done">✓</div>
+                        <div class="step-body">
+                            <div class="step-when" data-i18n="proj.s1.when">24. maj 2026.</div>
+                            <h4 data-i18n="proj.s1.h">Inicijalni dogovor sa vlasnikom</h4>
+                            <p data-i18n="proj.s1.p">Postignut je dogovor sa privatnim vlasnikom dela parcele na kome se nalaze ostaci crkve. Pregovorima je definisana cena i uslovi prenosa.</p>
+                        </div>
+                    </li>
+                    <li class="proj-step">
+                        <div class="step-dot done">✓</div>
+                        <div class="step-body">
+                            <div class="step-when" data-i18n="proj.s2.when">29. maj 2026.</div>
+                            <h4 data-i18n="proj.s2.h">Potpisan predugovor uz kaparu</h4>
+                            <p data-i18n="proj.s2.p">Formalizovana je kupoprodaja potpisivanjem predugovora uz uplatu kapare. Pravni okvir za prenos je uspostavljen.</p>
+                        </div>
+                    </li>
+                    <li class="proj-step">
+                        <div class="step-dot active">⏳</div>
+                        <div class="step-body">
+                            <div class="step-when" data-i18n="proj.s3.when">Jun 2026. — u toku</div>
+                            <h4 data-i18n="proj.s3.h">Upis vlasnika u katastar</h4>
+                            <p data-i18n="proj.s3.p">Vlasnik je prethodno imao teret (pljenidba) na zemljištu koji je izmiren. Čeka se administrativno brisanje tereta i formalni upis u Katastar nepokretnosti Republike Srbije.</p>
+                            <span class="alert-badge" data-i18n="proj.s3.alert">⚠ Aktuelni izazov · administrativna kašnjenja</span>
+                        </div>
+                    </li>
+                    <li class="proj-step">
+                        <div class="step-dot pending">4</div>
+                        <div class="step-body">
+                            <div class="step-when" data-i18n="proj.s4.when">Naredni korak</div>
+                            <h4 data-i18n="proj.s4.h">Angažovanje geometra</h4>
+                            <p data-i18n="proj.s4.p">Po upisu vlasnika, geometar će izmeriti tačan deo parcele za crkvu i pripremiti elaborat za formalno izdvajanje iz veće (17ha) parcele.</p>
+                        </div>
+                    </li>
+                    <li class="proj-step">
+                        <div class="step-dot pending">5</div>
+                        <div class="step-body">
+                            <div class="step-when" data-i18n="proj.s5.when">U procesu</div>
+                            <h4 data-i18n="proj.s5.h">Saglasnost suvlasnika za deobu</h4>
+                            <p data-i18n="proj.s5.p">Za formalno izdvajanje dela parcele potrebna je saglasnost svih ~20 suvlasnika veće parcele. Uz dobru volju zajednice, ovaj korak je savladiv.</p>
+                        </div>
+                    </li>
+                    <li class="proj-step">
+                        <div class="step-dot pending">6</div>
+                        <div class="step-body">
+                            <div class="step-when" data-i18n="proj.s6.when">Paralelno · uskoro</div>
+                            <h4 data-i18n="proj.s6.h">Terenska istraživanja</h4>
+                            <p data-i18n="proj.s6.p">Dok administrativni procesi teku, možemo početi terenska istraživanja — pronalaženje tačnih temelja crkve ispod šumskog pokrivača. Ostaci su dokumentovani ali precizni temelji još nisu mapirani.</p>
+                        </div>
+                    </li>
+                    <li class="proj-step">
+                        <div class="step-dot pending">7</div>
+                        <div class="step-body">
+                            <div class="step-when" data-i18n="proj.s7.when">Cilj</div>
+                            <h4 data-i18n="proj.s7.h">Prenos na Srpsku Pravoslavnu Crkvu</h4>
+                            <p data-i18n="proj.s7.p">Kada novi vlasnik bude upisan 1/1 na deo parcele, zemlja se prenosi na SPC — čime se stvara pravni i institucionalni okvir za obnovu svetinje.</p>
+                        </div>
+                    </li>
+                    <li class="proj-step">
+                        <div class="step-dot goal">✝</div>
+                        <div class="step-body">
+                            <div class="step-when" data-i18n="proj.s8.when">Vizija</div>
+                            <h4 data-i18n="proj.s8.h">Obnova crkve</h4>
+                            <p data-i18n="proj.s8.p">Izgradnja nove crkve na temeljima stare — sveto mesto Robajaca vraćeno zajednici, dostupno svima koji potiču ili se osećaju vezani za ovaj kraj.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="reveal delay-2">
+                <div class="prog-card">
+                    <span class="eyebrow" data-i18n="proj.stat.eye">Status projekta · jun 2026.</span>
+                    <div class="prog-status" data-i18n="proj.stat.val">U toku</div>
+                    <p class="prog-desc" data-i18n="proj.stat.desc">Predugovor potpisan · Čeka se brisanje tereta i upis vlasnika u katastar</p>
+                    <div class="prog-bar-wrap">
+                        <div class="prog-bar" id="progressBar"></div>
+                    </div>
+                    <div class="prog-labels">
+                        <span data-i18n="proj.plabel1">Pokretanje · Maj 2026.</span>
+                        <span style="font-weight: 700; color: var(--gold);" data-i18n="proj.plabel2">~18% završeno</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem;">
+                    <span class="eyebrow" style="color: var(--green-mid);" data-i18n="proj.cta.eye">Kako možeš da pomogneš sada</span>
+                    <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65;" data-i18n="proj.cta.p">Proces je složen i trajaće mesecima. U međuvremenu, svaka vrsta podrške pomaže — finansijska, stručna ili jednostavno širenje vesti.</p>
+                    <a href="#pomozi" class="btn btn-gold" style="width: 100%; justify-content: center; margin-top: 1rem;" data-i18n="proj.cta.btn">Podržite obnovu →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ COMMUNITY + JOIN (MERGED) ═══════════ -->
+<section class="section paths-section" id="pomozi">
+    <div class="container" style="text-align: center;">
+
+        <!-- ─── Zone 1: Oko svetilišta ─── -->
+        <span class="eyebrow reveal" style="color: var(--gold-light);" data-i18n="paths.eye">Oko svetilišta</span>
+        <h2 class="section-title reveal" style="color: var(--white);" data-i18n-html="paths.h2">Staze koje<br><em style="color: var(--gold-pale); font-style: italic;">čekaju</em></h2>
+        <p class="paths-lead reveal" data-i18n="paths.lead">Crkva na vrhu Tustog brda nije crkva samo jednog sela. Ona stoji na mestu prema kome su se nekad sticale staze iz osam okolnih sela — neka od njih crkvi su bliža nego udaljenim zaseocima samih Robaja.</p>
+
+        <div class="paths-converge reveal">
+            <div class="paths-village" data-i18n="paths.v1">Žabari</div>
+            <div class="paths-village" data-i18n="paths.v2">Prijezdić</div>
+            <div class="paths-village" data-i18n="paths.v3">Mratišić</div>
+            <div class="paths-village" data-i18n="paths.v4">Golubac</div>
+            <div class="paths-church-node">
+                <span class="paths-church-cross">✝&#xFE0E;</span>
+                <span class="paths-church-name" data-i18n-html="paths.center">Crkva<br>Tusto Brdo</span>
+            </div>
+            <div class="paths-village" data-i18n="paths.v5">Bukovac</div>
+            <div class="paths-village" data-i18n="paths.v6">Rajković</div>
+            <div class="paths-village" data-i18n="paths.v7">Osečenica</div>
+            <div class="paths-village" data-i18n="paths.v8">Krčmar</div>
+        </div>
+
+        <div class="paths-narrative reveal" style="text-align: left;">
+            <p data-i18n="paths.p1">Te staze su zarasle zajedno sa crkvom. Osam decenija šiblja i tišine. Ali put koji je jednom bio iskrčen ne nestaje — on čeka ispod korenja, u sećanjima starih koji znaju ko je kudom hodio do svetinje.</p>
+            <p data-i18n="paths.p2">Obnova crkve na Tustom brdu nije samo pitanje kamena i krečnjaka. To je pitanje: hoće li se staze ponovo otvoriti? Hoće li Žabari, Prijezdić, Mratišić, Bukovac, Krčmar, Golubac, Osečenica i Rajković ponovo imati put kojim se stiže do zajedničke svetinje — i bukvalno, i u najdubljem smislu te reči?</p>
+        </div>
+
+        <div class="paths-callout reveal" style="text-align: left;">
+            <p data-i18n-html="paths.callout"><strong>Crkva se gradi jednom. Staza se čisti svake godine.</strong> Pozivamo sve koji prepoznaju ovo mesto — iz sela oko Tustog brda, ili ma gde da su odrasli — da se pridruže. Ne kao gledaoci. Kao oni koji zavrću rukave i krče put napred.</p>
+        </div>
+
+        <div class="share-strip reveal" style="margin-top: 2rem;">
+            <div class="share-strip-icon">📢</div>
+            <div class="share-strip-body">
+                <h4 data-i18n="don.c4h">Podeli vest</h4>
+                <p data-i18n="don.c4p">Podelite ovu stranicu sa svima koji potiču iz sela oko Tustog brda — ili se na bilo koji način vezuju za ovaj kraj. Svaka podela je korak bliže obnovi.</p>
+            </div>
+        </div>
+        <p> </p>
+        <div class="donate-cta reveal">
+            <a href="mailto:obnova.robaje@zam.co.rs" class="btn btn-gold" style="font-size: 0.9rem; padding: 0.9rem 2.2rem;" data-i18n-html="don.cta">
+                ✉&ensp;Pišite nam
+            </a>
+            <p class="donate-note" data-i18n="don.note">Projekat se realizuje uz saradnju lokalne zajednice, porodica iz sela oko Tustog Brda i prijatelja ovog kraja. Srpska Pravoslavna Crkva biće krajnji staratelj obnovljene svetinje i garant njenog duhovnog poslanstva.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════ GALLERY ═══════════ -->
+<section class="section gallery-section">
+    <div class="container">
+        <span class="eyebrow reveal" data-i18n="gal.eye">Galerija</span>
+        <h2 class="section-title reveal" data-i18n="gal.h2">Tusto Brdo danas</h2>
+        <p class="reveal" style="color: var(--text-muted);" data-i18n="gal.lead">Pejzaž koji čeka obnovu — pogled na svetilište i lokaciju crkve iz vazduha i sa tla.</p>
+        <div class="gallery-grid reveal">
+            <div class="gal-item" style="aspect-ratio: 1 / 1.15;">
+                <img src="images/hero-landscape.jpg" alt="Pogled na Tusto brdo — livada i šuma, Robaje" loading="lazy">
+            </div>
+            <div class="gal-item" style="aspect-ratio: 3 / 6.9;">
+                <img src="images/satellite-map.png" alt="Katastarski prikaz parcele" loading="lazy">
+            </div> 
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand" data-i18n="foot.brand">Crkva na Tustom Brdu</div>
+            <p data-i18n="foot.tag">Projekat obnove crkve porušene u Drugom svetskom ratu, na istočnom vrhu Tustog brda u selu Robaje, opština Mionica.</p>
+            <p style="margin-top: 0.8rem;">
+                <a href="https://www.google.com/maps/place/%D0%A6%D1%80%D0%BA%D0%B2%D0%B0+%D0%BD%D0%B0+%D0%A2%D1%83%D1%81%D1%82%D0%BE%D0%BC+%D0%B1%D1%80%D0%B4%D1%83" target="_blank" rel="noopener">📍 <span data-i18n="foot.map">Prikaži na Google Maps</span></a>
+            </p>
+            <p style="margin-top: 0.5rem;">
+                <a href="mailto:obnova.robaje@zam.co.rs" data-notrans>✉ obnova.robaje@zam.co.rs</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-h" data-i18n="foot.nav">Stranica</div>
+            <ul>
+                <li><a href="#istorija" data-i18n="nav.hist">Hronologija</a></li>
+                <li><a href="#crkva" data-i18n="nav.church">O crkvi</a></li>
+                <li><a href="#pomozi" data-i18n="nav.vil">Zajednica</a></li>
+                <li><a href="#projekat" data-i18n="nav.proj">Projekat obnove</a></li>
+                <li><a href="#pomozi" data-i18n="nav.don">Pridruži se</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-h" data-i18n="foot.src">Izvori</div>
+            <p style="font-size: 0.82rem; line-height: 1.65;">
+                Crnobrnja A.N. & Radivojević M. (2003/2006). <em>Arheološka karta Bukovca i okoline.</em> Arheološki pregled Srpskog arheološkog društva, 1, 71–77.
+            </p>
+            <p style="margin-top: 0.8rem; font-size: 0.82rem;">
+                Poreklo prezimena: <a href="https://www.poreklo.rs/2013/05/09/poreklo-prezimena-selo-robaje-mionica/" target="_blank" rel="noopener" data-notrans>poreklo.rs</a>
+            </p>
+        </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+        <span data-i18n="foot.copy">© 2026 · Projekat obnove crkve na Tustom brdu</span>
+        <span data-i18n="foot.loc">Robaje · Opština Mionica · Zapadna Srbija</span>
+    </div>
+</footer>
+
+<script>
+(function () {
+    // ── Nav scroll
+    const nav = document.getElementById('mainNav');
+    const onScroll = () => nav.classList.toggle('solid', window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ── Parallax hero
+    const heroBg = document.getElementById('heroBg');
+    if (heroBg) {
+        window.addEventListener('scroll', () => {
+            heroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+        }, { passive: true });
+    }
+
+    // ── Reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('in');
+                io.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealEls.forEach(el => io.observe(el));
+
+    // ── Progress bar animation
+    const bar = document.getElementById('progressBar');
+    if (bar) {
+        const barObs = new IntersectionObserver(([e]) => {
+            if (e.isIntersecting) { bar.style.width = '18%'; barObs.disconnect(); }
+        }, { threshold: 0.5 });
+        barObs.observe(bar);
+    }
+
+    // ── Mobile menu
+    const toggle = document.getElementById('navToggle');
+    const menu   = document.getElementById('mobileMenu');
+    const icon   = document.getElementById('menuIcon');
+    const BARS   = '<line x1="3" y1="6" x2="19" y2="6"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="16" x2="19" y2="16"/>';
+
+    function openMobile() {
+        menu.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        icon.innerHTML = '<line x1="4" y1="4" x2="18" y2="18"/><line x1="18" y1="4" x2="4" y2="18"/>';
+        toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    window.closeMobile = function () {
+        menu.classList.remove('open');
+        document.body.style.overflow = '';
+        icon.innerHTML = BARS;
+        toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    toggle.addEventListener('click', () => {
+        menu.classList.contains('open') ? closeMobile() : openMobile();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });
+
+    // Hide sticky donate bar when donate section is visible
+    const donateSec = document.getElementById('pomozi');
+    const donateBar = document.querySelector('.mobile-donate-bar');
+    if (donateSec && donateBar) {
+        const barObs = new IntersectionObserver(entries => {
+            donateBar.style.opacity = entries[0].isIntersecting ? '0' : '1';
+            donateBar.style.pointerEvents = entries[0].isIntersecting ? 'none' : '';
+        }, { threshold: 0.1 });
+        barObs.observe(donateSec);
+    }
+})();
+
+// ══════════════════════════════════════════════════════
+// i18n — Srpski ćirilica / srpski latinica / English
+// ══════════════════════════════════════════════════════
+(function () {
+
+const L2C = [
+  ['dž','џ'],['Dž','Џ'],['DŽ','Џ'],
+  ['lj','љ'],['Lj','Љ'],['LJ','Љ'],
+  ['nj','њ'],['Nj','Њ'],['NJ','Њ'],
+  ['a','а'],['b','б'],['v','в'],['g','г'],['d','д'],
+  ['đ','ђ'],['e','е'],['ž','ж'],['z','з'],['i','и'],
+  ['j','ј'],['k','к'],['l','л'],['m','м'],['n','н'],
+  ['o','о'],['p','п'],['r','р'],['s','с'],['t','т'],
+  ['ć','ћ'],['u','у'],['f','ф'],['h','х'],['c','ц'],
+  ['č','ч'],['š','ш'],
+  ['A','А'],['B','Б'],['V','В'],['G','Г'],['D','Д'],
+  ['Đ','Ђ'],['E','Е'],['Ž','Ж'],['Z','З'],['I','И'],
+  ['J','Ј'],['K','К'],['L','Л'],['M','М'],['N','Н'],
+  ['O','О'],['P','П'],['R','Р'],['S','С'],['T','Т'],
+  ['Ć','Ћ'],['U','У'],['F','Ф'],['H','Х'],['C','Ц'],
+  ['Č','Ч'],['Š','Ш'],
+];
+
+const ROMAN_CHARS = /[IVXLCDM]/;
+function latToCyr(str) {
+  let out = '';
+  let i = 0;
+  while (i < str.length) {
+    // Skip Roman numerals: 2+ uppercase IVXLCDM letters at a word boundary
+    if (ROMAN_CHARS.test(str[i]) && (i === 0 || !/[a-zA-Z]/.test(str[i - 1]))) {
+      let j = i;
+      while (j < str.length && ROMAN_CHARS.test(str[j])) j++;
+      if (j - i >= 2 && (j === str.length || !/[a-zA-Z]/.test(str[j]))) {
+        out += str.slice(i, j);
+        i = j;
+        continue;
+      }
+    }
+    let matched = false;
+    for (const [lat, cyr] of L2C) {
+      if (str.startsWith(lat, i)) {
+        out += cyr;
+        i += lat.length;
+        matched = true;
+        break;
+      }
+    }
+    if (!matched) { out += str[i]; i++; }
+  }
+  return out;
+}
+
+// ── English translations (key → string or html-string)
+const EN = {
+  // nav (top bar & mobile)
+  'nav.h':       'History',
+  'nav.c':       'The Church',
+  'nav.r':       'Community',
+  'nav.p':       'Project',
+  'nav.d':       'Join us',
+  'nav.d.mob':   'Join us ↗',
+  // nav (footer)
+  'nav.hist':    'History',
+  'nav.church':  'The Church',
+  'nav.vil':     'Community',
+  'nav.proj':    'Rebuilding project',
+  'nav.don':     'Join us',
+  // mobile donate bar
+  'mob.don':     '✝&#xFE0E;&ensp;Join the project',
+  // hero
+  'hero.badge':  'Orthodox Heritage · Robaje · Mionica',
+  'hero.h1':     'Church on<br><em>Tusto Brdo</em>',
+  'hero.sub':    'A sanctuary lost to the forest — awaiting its resurrection',
+  'hero.map':    'View on map',
+  'hero.btn1':   'Follow the project',
+  'hero.btn2':   'Support rebuilding',
+  // stats
+  'stat.1': 'Years of history',
+  'stat.2': 'm² site area',
+  'stat.3': 'Metres of preserved remains',
+  'stat.4': 'Year project launched',
+  // about
+  'about.eye':  'About the site',
+  'about.h2':   'Tusto Brdo —<br>a hill that keeps secrets',
+  'about.lead': 'On the eastern peak of Tusto Brdo, above the village of Robaje in Mionica municipality, lie the ruins of a church destroyed in World War II — and traces of human presence reaching back to the Bronze Age.',
+  // history
+  'hist.eye':  'Through time',
+  'hist.h2':   'Timeline of the site',
+  'hist.lead': 'From Bronze Age burial mounds to a destroyed church — Tusto Brdo hides layers of history spanning more than three millennia.',
+  // timeline eras
+  'tl.1.era': 'Prehistory · ~2000–1200 BCE',
+  'tl.1':     'Bronze Age — Stone Burial Mounds',
+  'tl.2.era': 'Medieval · XIII–XVI century',
+  'tl.2':     'Middle Ages — Christian Community',
+  'tl.3.era': 'Ottoman period · XVII–XVIII century',
+  'tl.3':     'Ottoman Era — Turkish Remnants',
+  'tl.4.era': 'Uprisings · c. 1806',
+  'tl.4':     'Era of Uprisings — Church Records',
+  'tl.4a.era':'Centuries of history · destruction and rebuilding',
+  'tl.4a':    'Cycles of destruction and rebuilding',
+  'tl.4b.era':'Interwar period · 1918–1941',
+  'tl.4b':    'Partial restoration before the Second World War',
+  'tl.5.era': 'World War II · 1941 - 1944',
+  'tl.5':     'World War II — Final Destruction',
+  'tl.6.era': 'Communism · after 1945',
+  'tl.6':     'Nationalisation — Land in Limbo',
+  'tl.7.era': 'Modern science · 2003',
+  'tl.7':     'Science Documents the Traces',
+  // church
+  'church.eye':  'The Sanctuary',
+  'church.h2':   'What we know about the church',
+  'church.lead': 'The church on Tusto Brdo did not survive only in local memory — its traces exist to this day, documented both in archives and through archaeology.',
+  // village
+  'vil.eye':  'Our village',
+  'vil.h2':   'Robaje — Origins<br>and community',
+  'vil.lead': 'The families living in Robaje today carry roots stretching back three and a half centuries — from Herzegovina, Montenegro, Old Serbia and the Polimlje region. Nearly all arrived as settlers, and to all of them the church on Tusto Brdo was, and remains, a shared sanctuary.',
+  // lipa
+  'lipa.eye':  'The secret beneath the hill',
+  'lipa.h2':   'Šuplja Lipa —<br><em style="color: var(--gold-pale);">underground mystery</em>',
+  // challenge
+  'chal.eye':  'The challenge',
+  'chal.h2':   'Land reclaimed',
+  'chal.lead': 'The path to rebuilding the church is not only spiritual — it runs through cadastral records, co-ownership agreements and administrative processes. Every step matters.',
+  'chal.c1h':  '~17-hectare plot',
+  'chal.c1p':  'The land on which the church stands is part of a large plot of unusual boundaries, nearly 17 hectares — nationalised under communism. The church site itself covers about <strong style="color: var(--gold-light);">11,600 m²</strong>.',
+  'chal.c2h':  'About 20 co-owners',
+  'chal.c2p':  'Over the decades, the plot has acquired about 20 co-owners. Formally separating the church portion requires agreement from all co-owners — complex, but achievable with community goodwill.',
+  'chal.c3h':  'Owner found',
+  'chal.c3p':  'The owner of the portion of the plot where the church stands has been identified and an agreement reached. A preliminary contract was signed with a deposit on <strong style="color: var(--gold-light);">29 May 2026</strong>.',
+  'chal.c4h':  'Cadastre in process',
+  'chal.c4p':  'The owner had an encumbrance on the land that has now been settled. We are awaiting the administrative removal of the encumbrance and formal registration in the Republic of Serbia Land Registry.',
+  'chal.c5h':  'Surveyor and partition',
+  'chal.c5p':  'Next step: a licensed surveyor measures the exact church portion and prepares a partition plan. This is followed by co-owner consent and transfer to the Serbian Orthodox Church.',
+  'chal.c6h':  'Fieldwork begins',
+  'chal.c6p':  'While administration runs its course, we can begin fieldwork — locating the exact church foundations under the forest cover. The land preserves traces waiting to be uncovered.',
+  // project
+  'proj.eye':  'Rebuilding project',
+  'proj.h2':   'Steps towards rebuilding',
+  'proj.lead': 'Every signed document, every administrative step and every day of work on the ground is part of one goal: for the church on Tusto Brdo to stand again.',
+  'proj.stat.eye':  'Project status · June 2026',
+  'proj.stat.val':  'In progress',
+  'proj.stat.desc': 'Preliminary contract signed · Awaiting encumbrance removal and owner registration',
+  'proj.cta.eye':   'How you can help right now',
+  'proj.cta.p':     'The process is complex and will take months. In the meantime, every kind of support helps — financial, professional or simply spreading the word.',
+  'proj.cta.btn':   'Support the rebuilding →',
+  // donate
+  'don.eye':  'Join us',
+  'don.h2':   'A call to people of good will',
+  'don.lead': 'This project is an invitation to everyone who comes from the villages around Tusto Brdo, who carries this place in their heart, or who simply believes a sacred site deserves to rise from the ashes. If that is you — your place is here.',
+  'don.c4h':  'Share the news',
+  'don.c4p':  'Share this page with anyone who comes from the villages around Tusto Brdo — or feels connected to this area in any way. Every share is one step closer to rebuilding.',
+  'don.cta':  '✉&ensp;Write to us',
+  'don.note': 'The project is being realised in cooperation with the local community, families from villages around Tusto Brdo and friends of this region. The Serbian Orthodox Church will be the ultimate custodian of the rebuilt sanctuary and the guarantor of its spiritual mission.',
+  // gallery
+  'gal.eye':  'Gallery',
+  'gal.h2':   'Tusto Brdo today',
+  'gal.lead': 'A landscape awaiting renewal — views of the sanctuary and church site from the air and ground.',
+  // footer
+  'foot.brand': 'Church on Tusto Brdo',
+  'foot.tag':   'Rebuilding project for a church destroyed in World War II, on the eastern peak of Tusto Brdo in the village of Robaje, Mionica municipality.',
+  'foot.map':   'View on Google Maps',
+  'foot.nav':   'Pages',
+  'foot.src':   'Sources',
+  'foot.copy':  '© 2026 · Church rebuilding project on Tusto Brdo',
+  'foot.loc':   'Robaje · Mionica municipality · Western Serbia',
+  // about body
+  'about.p': 'Tusto Brdo closes the Golubac field to the south. This karst landscape — dotted with sinkholes, stone burial mounds and ancient forests — has concealed and preserved traces of past civilisations for centuries. Local residents knew the church was here and, honouring the sacred site, never cultivated that part of the land. That portion of the plot remained under forest — an unintentional, perhaps providential, guard over the sanctuary.',
+  // timeline paragraphs
+  'tl.1.p': 'During a systematic survey in 2003, the site of Tusto Brdo – Ravne Vrtače yielded a complex of three sinkholes with stone burial mounds on their rims, built directly on bedrock. Excavations of mounds 1 and 2 during the Robaje 2003 Summer Science School showed them to belong to the Belotić–Bela Crkva cultural group — one of the most significant Bronze Age cultures in western Serbia.',
+  'tl.2.p': 'Several cemeteries have been recorded in the immediate vicinity of Tusto Brdo. The Robaje cemetery at Petrašević bears grave slabs with ornamentation interpreted as a form of anthropomorphic cross, dated to the 15th–16th century. The Old Cemetery in the Mijovići hamlet contains older, amorphous grave monuments similar to those at the Bukovac and Mađarsko cemeteries — dated to the 13th–16th century. Nearby cemeteries in Bukovac contain the same types of slabs, testifying to continuous Christian presence throughout the medieval period.',
+  'tl.3.p': 'On Beluško Brdo, in the village of Mratišići, local tradition speaks of a Turkish settlement on the western slope. Until some fifty years ago, stone, brick and roof tiles would surface during field cultivation. A chance find of a gold coin is also reported. This site bears witness to Ottoman presence in the immediate vicinity of Tusto Brdo during the 17th–18th century.',
+  'tl.4.p': 'Oral traditions record the church on Tusto Brdo being mentioned during the First Serbian Uprising (1804–1813) — as a spiritual refuge and landmark of village life during the struggle for liberation. Precise archival documentation from that period has not survived, but the tradition of memory suggests its existence from at least that time.',
+  'tl.4a.p':'One destruction of the church probably occurred between the end of the First Serbian Uprising and the First World War, but it cannot be claimed as the only or the first. There are no written records of this — everything comes from the memories of local residents.',
+  'tl.4b.p':'During the interwar period, an attempt was made to partially restore the church, but the reconstruction was never completed. According to the memories of local residents, work was carried out, but the church was not brought to full functionality before the wartime destruction that followed. No written records of these works exist either: everything we know, we know through oral tradition.',
+  'tl.5.p': 'The church on Tusto Brdo, partially restored in the interwar period, was finally destroyed during the Second World War — according to the testimony of local residents, most likely around 1941–1944. The preserved remains, overgrown with dense vegetation, were recorded in 2003 at the site known as "Crkvine": dimensions 15 × 6 m, height 1 m, with a large quantity of stone and brick. Local residents consciously left the ground uncultivated — they knew a church had stood there.',
+  'tl.6.p': 'During the communist period, the land on which the church ruins stand was nationalised and became part of a plot of nearly 17 hectares — with an unusual boundary shape. Over the decades, that plot acquired around 20 co-owners. The church portion was never cultivated — the forest covering it was an unintentional but perhaps providential protection of the remains.',
+  'tl.7.p': 'As part of the Robaje 2003 Archaeological Science School, organised by the Petnica Research Station, a team led by Adam N. Crnobrnja and Miljana Radivojević conducted a systematic survey. In addition to the prehistoric burial mounds, the church remains at the site "Crkvine" (no. 14) were documented. The work was published in the Archaeological Review of the Serbian Archaeological Society 1 (Belgrade, 2006).',
+  'tl.8':   'Today — The Rebuilding Project Begins',
+  'tl.8.p': 'After more than 80 years, a project has been launched to restore the sacred site of Tusto Brdo. The first concrete legal and ownership steps were taken in May 2026. The land has been found, the owner identified, an agreement reached — a complex administrative path now follows, after which the rebuilding of the church can begin.',
+  // church evidence cards
+  'church.tag1': 'Physical remains',
+  'church.ev1h': 'Walls still standing',
+  'church.ev1p': 'Documented in 2003: remains measuring 15 × 6 metres, up to 1 metre high, concealed in dense vegetation on the eastern peak of Tusto Brdo. A large quantity of stone and brick confirms a solid construction.',
+  'church.tag2': 'Scientific literature',
+  'church.ev2h': 'Archival confirmation',
+  'church.ev2p': 'The site "Crkvine" (no. 14) was entered into the scientific literature in: Crnobrnja A.N. & Radivojević M., Archaeological map of Bukovac and surroundings, Archaeological Review of the Serbian Archaeological Society, no. 1, Belgrade 2003/2006, pp. 71–77.',
+  'church.tag3': 'Oral tradition',
+  'church.ev3h': 'Testimony of V. Mijović',
+  'church.ev3p': 'Information about the church and its destruction came from V. Mijović, a local informant, and was confirmed by field inspection. Villagers who knew of the church consciously left that portion of land uncultivated — the land kept the memory of the sanctuary alive.',
+  'church.tag4': 'Context',
+  'church.ev4h': "The site's prehistoric sanctity",
+  'church.ev4p': 'Not far from the church, on the same hill, Bronze Age stone burial mounds (~2000–1200 BCE) have been recorded — indicating the ritual significance of this space across millennia. Throughout history, Christian churches have frequently been built on sites previously considered sacred.',
+  'church.mapcap': '📍 Church on Tusto Brdo · destroyed around 1941 - 1944 · Robaje, Mionica',
+  // village
+  'vil.geo.eye':    'Geography',
+  'vil.geo1':       'Robaje lies on a plateau extending from Dračić across Žabar. The soil is full of sinkholes with rocky ground or red clay. The sinkholes are arranged in rows stretching towards Rajković. Several sinkholes fill with rainwater and are called jezera (lakes) — the most beautiful being Dubokača (45 m long, never drying out) and Jezero u Bunčevici.',
+  'vil.geo2':       'The main heights of the village are: Jezdinac, Ploča, Tusto Brdo (towards Mratišić), Bogoljenac and Bunčevica. The only river is the Lepenica, on the western side of the village. There are no streams inland — rainwater sinks into the sinkholes.',
+  'vil.geo3':       'On the eastern slope of Tusto Brdo, beside the church itself, lies the spring Spasovina — better known today as Robajska česma. It is no coincidence that the spring bears the name of the Saviour: Spasovdan (Ascension of the Lord) is the patron saint day of Robaje — a shared sacred day of the whole village, whose roots are remembered in the very name of the spring below the church.',
+  'vil.origins.eye': 'Three centuries of settler roots',
+  'vil.hl': '<strong>Oral tradition recalls that the church on Tusto Brdo was active during the First Serbian Uprising (1804–1813).</strong> At that time, almost all the families living in Robaje today were already there. <strong>The ancestors of today\'s villagers built, renewed and tended it.</strong> For over 80 years that memory has lived without a sanctuary. <strong>Now it is upon all of us to restore it.</strong>',
+  'vil.dzemat.h': 'Neighbourhood clusters and families of Robaje',
+  'vil.dzemat.p': 'Robaje is a dispersed settlement with houses grouped in three džemats (neighbourhood clusters). Based on Ljubomir Pavlović\'s book <em>Kolubara i Podgorina</em> (1907), as reported on <a href="https://www.poreklo.rs/2013/05/09/poreklo-prezimena-selo-robaje-mionica/" target="_blank" rel="noopener" style="color: var(--green-mid); font-weight: 600; text-decoration: underline;" data-notrans>poreklo.rs</a>.',
+  'vil.hl2': 'Do you recognise any of these surnames as your own? Everyone who comes from Robaje — or whose family carries a memory of the church — is part of this story. <strong>Get in touch with us.</strong>',
+  'vil.census': 'According to the 1900 census, Robaje had <strong>90 households and 587 inhabitants</strong> in 12 family lineages. The village name is ancient — it appears as early as 1737 in a list of villages of the Valjevo District, preceded by a legend of a plague that "enslaved" (robila) the village and left it desolate.',
+  // lipa
+  'lipa.lead': 'Tusto Brdo hides yet another secret — this time underground. Šuplja Lipa is a speleological site in the village of Robaje, believed to be connected to the Petnička Cave system — one of the longest explored caves in this part of Serbia.',
+  'lipa.p2':   '"Šuplja Lipa" — the hollow lime tree, a natural opening leading underground — describes the character of the entrance. Mionica Tourism describes this place as "<em>quite extraordinary</em>" and invites visitors to leave their everyday life behind.',
+  'lipa.callout1h': 'Possible connection to Petnička Cave',
+  'lipa.callout1p': 'Petnička Cave near Valjevo has around 600 metres of explored channels, with Upper and Lower Caves and several chambers. Speleologists who investigated Šuplja Lipa noted potential hydro-geological connections between the two systems within the karst terrain of Maljen and Podgorina.',
+  'lipa.callout2h': 'Derinkuyu beneath Tusto Brdo?',
+  'lipa.callout2p': 'The underground city of Derinkuyu in Cappadocia (Turkey) — a millennia-old refuge carved into rock, unknown to the modern world until 1963 — raises a question: what truly lies beneath Tusto Brdo? Residents who have lived there for decades may not even be aware of the scale of what exists under their feet. A systematic speleological investigation of this area has yet to be carried out.',
+  'lipa.fact1l': 'Location',  'lipa.fact1v': 'Tusto Brdo · Robaje',
+  'lipa.fact2l': 'Type',      'lipa.fact2v': 'Speleological site',
+  'lipa.fact3l': 'Connection','lipa.fact3v': 'Petnička Cave system',
+  'lipa.fact4l': 'Explored',  'lipa.fact4v': 'Partial · expedition needed',
+  // paths / community
+  'paths.eye':    'Around the sanctuary',
+  'paths.h2':     'Paths that<br><em style="color: var(--gold-pale); font-style: italic;">wait</em>',
+  'paths.lead':   'The church on Tusto Brdo is not the church of one village alone. It stands at a point where paths once converged from eight surrounding villages — some of them closer to the church than the more distant hamlets of Robaje itself.',
+  'paths.v1':     'Žabari',
+  'paths.v2':     'Prijezdić',
+  'paths.v3':     'Mratišić',
+  'paths.v4':     'Golubac',
+  'paths.center': 'Church<br>Tusto Brdo',
+  'paths.v5':     'Bukovac',
+  'paths.v6':     'Rajković',
+  'paths.v7':     'Osečenica',
+  'paths.v8':     'Krčmar',
+  'paths.p1':     'Those paths became overgrown together with the church. Eight decades of scrubland and silence. But a path that was once cleared does not disappear — it waits beneath the roots, in the memories of the old who still know who walked which way to the sanctuary.',
+  'paths.p2':     'Rebuilding the church on Tusto Brdo is not only a question of stone and mortar. It is a question: will the paths be opened again? Will Žabari, Prijezdić, Mratišić, Bukovac, Krčmar, Golubac, Osečenica and Rajković once again have a road leading to their shared sanctuary — in the most literal sense, and in the deepest one?',
+  'paths.callout':'<strong>A church is built once. A path is cleared every year.</strong> We invite everyone who recognises this place — from the villages around Tusto Brdo, or wherever they grew up — to join us. Not as spectators. As those who roll up their sleeves and clear the way forward.',
+  // challenge
+  'chal.cap': 'Cadastral view of the site · Plot 905 · Robaje, Mionica municipality',
+  // project steps
+  'proj.s1.when': '24 May 2026',
+  'proj.s1.h':    'Initial agreement with the owner',
+  'proj.s1.p':    'An agreement was reached with the private owner of the portion of the plot where the church ruins stand. Negotiations defined the price and conditions of transfer.',
+  'proj.s2.when': '29 May 2026',
+  'proj.s2.h':    'Preliminary contract signed with deposit',
+  'proj.s2.p':    'The purchase was formalised by signing a preliminary contract with a deposit payment. The legal framework for the transfer has been established.',
+  'proj.s3.when': 'June 2026 — ongoing',
+  'proj.s3.h':    'Owner registration in the land registry',
+  'proj.s3.p':    'The owner previously had an encumbrance on the land which has been settled. We are awaiting the administrative removal of the encumbrance and formal registration in the Republic of Serbia Land Registry.',
+  'proj.s3.alert':'⚠ Current challenge · administrative delays',
+  'proj.s4.when': 'Next step',
+  'proj.s4.h':    'Engaging a licensed surveyor',
+  'proj.s4.p':    'Once the owner is registered, a licensed surveyor will measure the exact church portion and prepare a partition plan for formal separation from the larger (17 ha) plot.',
+  'proj.s5.when': 'In process',
+  'proj.s5.h':    'Co-owner consent for partition',
+  'proj.s5.p':    'Formally separating the church portion requires the consent of all ~20 co-owners of the larger plot. With community goodwill, this step is achievable.',
+  'proj.s6.when': 'Parallel · soon',
+  'proj.s6.h':    'Field investigation',
+  'proj.s6.p':    'While administrative processes run their course, we can begin field investigation — locating the precise church foundations beneath the forest cover. The remains are documented but the exact foundations have yet to be mapped.',
+  'proj.s7.when': 'Goal',
+  'proj.s7.h':    'Transfer to the Serbian Orthodox Church',
+  'proj.s7.p':    'Once the new owner is registered with full title to the plot portion, the land is transferred to the SOC — establishing the legal and institutional framework for rebuilding the sanctuary.',
+  'proj.s8.when': 'Vision',
+  'proj.s8.h':    'Rebuilding the church',
+  'proj.s8.p':    'Building a new church on the foundations of the old — the sacred site of Robaje returned to the community, accessible to all who come from or feel connected to this region.',
+  'proj.plabel1': 'Launched · May 2026',
+  'proj.plabel2': '~18% complete',
+};
+
+// ── Storage: origMarkup maps every [data-i18n/data-i18n-html] el → its original innerHTML
+//    origNodes stores text nodes NOT inside any marked element (for Cyrillic restore)
+const origMarkup = new Map();
+const origNodes  = [];
+const SKIP_TAGS  = new Set(['SCRIPT','STYLE','NOSCRIPT','HEAD','META','LINK','svg']);
+
+function hasSkipAncestor(node) {
+  let el = node.parentElement;
+  while (el) {
+    if (SKIP_TAGS.has(el.tagName) || el.hasAttribute('data-notrans')) return true;
+    el = el.parentElement;
+  }
+  return false;
+}
+function isInsideMarked(node) {
+  let el = node.parentElement;
+  while (el) {
+    if (el.hasAttribute('data-i18n') || el.hasAttribute('data-i18n-html')) return true;
+    el = el.parentElement;
+  }
+  return false;
+}
+
+function storeOriginals() {
+  document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el => {
+    if (!origMarkup.has(el)) origMarkup.set(el, el.innerHTML);
+  });
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      if (!node.textContent.trim()) return NodeFilter.FILTER_REJECT;
+      if (hasSkipAncestor(node) || isInsideMarked(node)) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  let n;
+  while ((n = walker.nextNode())) origNodes.push({ node: n, text: n.textContent });
+}
+
+function restoreOriginals() {
+  origMarkup.forEach((html, el) => { if (el.isConnected) el.innerHTML = html; });
+  origNodes.forEach(({ node, text }) => { if (node.isConnected) node.textContent = text; });
+}
+
+// Fresh TreeWalker on text nodes — never touches HTML markup strings
+function applyLatToCyr() {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      if (!node.textContent.trim()) return NodeFilter.FILTER_REJECT;
+      if (hasSkipAncestor(node)) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  let n;
+  while ((n = walker.nextNode())) n.textContent = latToCyr(n.textContent);
+}
+
+function applyEnglish() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (EN[key] !== undefined) el.textContent = EN[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (EN[key] !== undefined) el.innerHTML = EN[key];
+  });
+}
+
+function setLang(lang) {
+  restoreOriginals();
+  if (lang === 'cyr') {
+    applyLatToCyr();
+    document.documentElement.lang = 'sr';
+    document.title = latToCyr('Crkva na Tustom Brdu · Robaje');
+  } else if (lang === 'en') {
+    applyEnglish();
+    document.documentElement.lang = 'en';
+    document.title = 'Church on Tusto Brdo · Robaje';
+  } else {
+    document.documentElement.lang = 'sr-Latn';
+    document.title = 'Crkva na Tustom Brdu · Robaje';
+  }
+  document.querySelectorAll('.lang-btn, .mob-lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  localStorage.setItem('lang', lang);
+}
+
+document.querySelectorAll('.lang-btn, .mob-lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+storeOriginals();
+const savedLang = localStorage.getItem('lang') || 'cyr';
+setLang(savedLang);
+
+})();
+</script>
+</body>
+</html>
