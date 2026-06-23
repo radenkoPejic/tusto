@@ -144,6 +144,7 @@
         }
 
         .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+        .nav-links a.nav-active { color: var(--gold-pale); background: rgba(184,134,11,0.12); }
 
         .nav-cta {
             background: var(--gold) !important;
@@ -1238,6 +1239,28 @@
             max-width: 480px;
             margin: 0 auto;
         }
+        .wap-qr {
+            width: 192px;
+            height: 192px;
+            object-fit: contain;
+            background: #fff;
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid rgba(184,134,11,0.4);
+            display: block;
+            cursor: pointer;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .wap-qr:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px rgba(184,134,11,0.12);
+        }
+        .wap-label {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.45);
+            margin-top: 0.55rem;
+            letter-spacing: 0.02em;
+        }
 
         .donate-note {
             font-size: 0.85rem;
@@ -1825,9 +1848,9 @@
     <ul class="nav-links">
         <li><a href="#istorija" data-i18n="nav.h">Istorija</a></li>
         <li><a href="#crkva"    data-i18n="nav.c">Crkva</a></li>
-        <li><a href="#pomozi"   data-i18n="nav.r">Zajednica</a></li>
         <li><a href="#projekat" data-i18n="nav.p">Projekat</a></li>
-        <li><a href="#pomozi" class="nav-cta" data-i18n="nav.d">Pridruži se</a></li>
+        <li><a href="#pomozi"   data-i18n="nav.r">Zajednica</a></li>
+        <li><a href="https://invite.viber.com/?g2=AQBVyNMu9krcSFa6%2BS5JY%2F4eEvx80g2YU1caaq9ONk287oLLVexP3dvtBi18k9Cu" target="_blank" rel="noopener" class="nav-cta" data-i18n="nav.d">Pridruži se</a></li>
     </ul>
     <div class="lang-sw" role="group" aria-label="Jezik / Language">
         <button class="lang-btn active" data-lang="cyr" title="Srpski ćirilica">Ћир</button>
@@ -1854,7 +1877,7 @@
         <a href="#crkva"    onclick="closeMobile()" data-i18n="nav.c">Crkva</a>
         <a href="#pomozi"   onclick="closeMobile()" data-i18n="nav.r">Zajednica</a>
         <a href="#projekat" onclick="closeMobile()" data-i18n="nav.p">Projekat</a>
-        <a href="#pomozi"   onclick="closeMobile()" class="mob-cta" data-i18n="nav.d.mob">Pridruži se ↗</a>
+        <a href="https://invite.viber.com/?g2=AQBVyNMu9krcSFa6%2BS5JY%2F4eEvx80g2YU1caaq9ONk287oLLVexP3dvtBi18k9Cu" target="_blank" rel="noopener" onclick="closeMobile()" class="mob-cta" data-i18n="nav.d.mob">Pridruži se ↗</a>
     </nav>
     <div class="mob-lang" role="group" aria-label="Jezik / Language">
         <button class="mob-lang-btn active" data-lang="cyr">Ћирилица</button>
@@ -1866,7 +1889,7 @@
 
 <!-- Sticky mobile donate bar -->
 <div class="mobile-donate-bar">
-    <a href="#pomozi" data-i18n-html="mob.don">✝&#xFE0E;&ensp;Pridruži se projektu</a>
+    <a href="https://invite.viber.com/?g2=AQBVyNMu9krcSFa6%2BS5JY%2F4eEvx80g2YU1caaq9ONk287oLLVexP3dvtBi18k9Cu" target="_blank" rel="noopener" data-i18n-html="mob.don">✝&#xFE0E;&ensp;Pridruži se projektu</a>
 </div>
 
 <!-- ═══════════ HERO ═══════════ -->
@@ -1892,7 +1915,7 @@
         <p class="hero-sub" data-i18n="hero.sub">Svetinja zatočena u šumi — čeka da ustane iz pepela</p>
 
         <p class="hero-meta">
-            <a href="https://www.google.com/maps/place/%D0%A6%D1%80%D0%BA%D0%B2%D0%B0+%D0%BD%D0%B0+%D0%A2%D1%83%D1%81%D1%82%D0%BE%D0%BC+%D0%B1%D1%80%D0%B4%D1%83+-+%D0%BF%D0%BE%D1%80%D1%83%D1%88%D0%B5%D0%BD%D0%B0+1944./@44.2106581,19.9787481,1259m" target="_blank" rel="noopener">
+            <a href="https://www.google.com/maps/place/%D0%A6%D1%80%D0%BA%D0%B2%D0%B0+%D0%BD%D0%B0+%D0%A2%D1%83%D1%81%D1%82%D0%BE%D0%BC+%D0%B1%D1%80%D0%B4%D1%83+-+%D0%BF%D0%BE%D1%80%D1%83%D1%88%D0%B5%D0%BD%D0%B0+1944./@44.2092448,19.9809982,629m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4759ef0006260bf7:0x867acbb599c76a34!8m2!3d44.2092448!4d19.9809982!16s%2Fg%2F11z7q5wj2g?hl=sr" target="_blank" rel="noopener">
                 ⊕&ensp;44.2092° N&nbsp;&nbsp;19.9810° E&nbsp;&nbsp;—&nbsp;&nbsp;<span data-i18n="hero.map">Prikaži na mapi</span>
             </a>
         </p>
@@ -1996,7 +2019,7 @@
                     <div class="tl-content">
                         <span class="tl-era-tag" data-i18n="tl.2.era">Srednji vek · XIII–XVI vek</span>
                         <h3 data-i18n="tl.2">Srednji vek — Hrišćanska zajednica</h3>
-                        <p data-i18n="tl.2.p">U neposrednoj okolini Tustog brda evidentirano je više groblja. <em>Robajsko groblje</em> kod Petrašević nosi nadgrobne ploče s ornamentikom interpretiranom kao tip <strong>antropomorfnog krsta</strong>, datovane u XV–XVI vek. <em>Staro groblje</em> zasеoka Mijovići, smešteno unutar Robaja (x — 7418,800; y — 4897,125; z — 350), sadrži starije amorfe nadgrobne spomenike poput onih na Bukovačkom i Mađarskom groblju — ponegde poremećene mlađim ukopima, datirane u <strong>XIII–XVI vek</strong>. Obližnja groblja u Bukovcu sadrže iste tipove ploča — svedočanstvo kontinuiranog hrišćanskog prisustva kroz čitav srednji vek.</p>
+                        <p data-i18n="tl.2.p">U neposrednoj okolini Tustog brda evidentirano je više groblja. <em>Robajsko groblje</em> kod Petraševića nosi nadgrobne ploče s ornamentikom interpretiranom kao tip <strong>antropomorfnog krsta</strong>, datovane u XV–XVI vek. <em>Staro groblje</em> zasеoka Mijovići, smešteno unutar Robaja (x — 7418,800; y — 4897,125; z — 350), sadrži starije amorfe nadgrobne spomenike poput onih na Bukovačkom i Mađarskom groblju — ponegde poremećene mlađim ukopima, datirane u <strong>XIII–XVI vek</strong>. Obližnja groblja u Bukovcu sadrže iste tipove ploča — svedočanstvo kontinuiranog hrišćanskog prisustva kroz čitav srednji vek.</p>
                         <span class="tl-source">Crnobrnja & Radivojević, 2003 · lokaliteti 9, 10, 12</span>
                     </div>
                 </div>
@@ -2007,7 +2030,7 @@
                 <div class="tl-left">
                     <div class="tl-content">
                         <span class="tl-era-tag" data-i18n="tl.3.era">Osmanski period · XVII–XVIII vek</span>
-                        <h3 data-i18n="tl.3">Osmansko doba — Turska nasedina</h3>
+                        <h3 data-i18n="tl.3">Osmansko doba — Turska naseobina</h3>
                         <p data-i18n="tl.3.p">Na Beluškom brdu, u selu Mratišići, lokalna predanja govore o turskom naselju na zapadnoj strani brda. Do pre pedesetak godina, pri obradi njiva, na površinu su izlazili kamen, opeka i crep. Pominje se i slučajan nalaz zlatnika. Ovaj lokalitet svedoči o osmanskom prisustvu u neposrednoj blizini Tustog brda u XVII–XVIII veku.</p>
                         <span class="tl-source">Crnobrnja & Radivojević, 2003 · lokalitet 13 "Beluško brdo"</span>
                     </div>
@@ -2187,6 +2210,14 @@
 
             <div class="ev-card">
                 <div class="ev-card-head">
+                    <span class="ev-tag" data-i18n="church.tag5">Usmeno predanje</span>
+                    <h4 data-i18n="church.ev5h">Posveta Svetom Arhangelu Mihailu</h4>
+                </div>
+                <p data-i18n-html="church.ev5p">Po predanju meštana, crkva na Tustom brdu bila je posvećena <strong>Svetom Arhangelu Mihailu</strong>. Ovo predanje nije potvrđeno pisanim izvorima. Verujemo da bi istraživanje ostataka crkve moglo doneti odgovor i na ovo pitanje.</p>
+            </div>
+
+            <div class="ev-card">
+                <div class="ev-card-head">
                     <span class="ev-tag" data-i18n="church.tag4">Kontekst</span>
                     <h4 data-i18n="church.ev4h">Praistorijska svetost mesta</h4>
                 </div>
@@ -2216,7 +2247,7 @@
 
             <div class="map-frame">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1248.8!2d19.9797!3d44.2092448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759ef0006260bf7%3A0x867acbb599c76a34!2z0KbRgNC60LLQsCDQvdCwINGC0YPRgdGC0L7QvCDQsdGA0LTRgyAtINC_0L7RgNGD0YjQtdC90LAgMTk0NC4!5e1!3m2!1ssr!2srs!4v1718900000000!5m2!1ssr!2srs"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1248.8!2d19.9809982!3d44.2092448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759ef0006260bf7%3A0x867acbb599c76a34!2z0KbRgNC60LLQsCDQvdCwINGC0YPRgdGC0L7QvCDQsdGA0LTRgyAtINC_0L7RgNGD0YjQtdC90LAgMTk0NC4!5e1!3m2!1ssr!2srs!4v1718900000000!5m2!1ssr!2srs"
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
@@ -2527,7 +2558,7 @@
                         <div class="step-body">
                             <div class="step-when" data-i18n="proj.s3.when">Jun 2026. — u toku</div>
                             <h4 data-i18n="proj.s3.h">Upis vlasnika u katastar</h4>
-                            <p data-i18n="proj.s3.p">Vlasnik je prethodno imao teret (pljenidba) na zemljištu koji je izmiren. Čeka se administrativno brisanje tereta i formalni upis u Katastar nepokretnosti Republike Srbije.</p>
+                            <p data-i18n="proj.s3.p">Vlasnik je prethodno imao teret na zemljištu koji je izmiren. Čeka se administrativno brisanje tereta i formalni upis u Katastar nepokretnosti Republike Srbije.</p>
                             <span class="alert-badge" data-i18n="proj.s3.alert">⚠ Aktuelni izazov · administrativna kašnjenja</span>
                         </div>
                     </li>
@@ -2568,7 +2599,7 @@
                         <div class="step-body">
                             <div class="step-when" data-i18n="proj.s8.when">Vizija</div>
                             <h4 data-i18n="proj.s8.h">Obnova crkve</h4>
-                            <p data-i18n="proj.s8.p">Izgradnja nove crkve na temeljima stare — sveto mesto Robajaca vraćeno zajednici, dostupno svima koji potiču ili se osećaju vezani za ovaj kraj.</p>
+                            <p data-i18n="proj.s8.p">Izgradnja nove crkve na temeljima stare — sveto mesto vraćeno zajednici, dostupno svima koji potiču ili se osećaju vezani za ovaj kraj.</p>
                         </div>
                     </li>
                 </ul>
@@ -2590,7 +2621,7 @@
 
                 <div style="margin-top: 1.5rem; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem;">
                     <span class="eyebrow" style="color: var(--green-mid);" data-i18n="proj.cta.eye">Kako možeš da pomogneš sada</span>
-                    <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65;" data-i18n="proj.cta.p">Proces je složen i trajaće mesecima. U međuvremenu, svaka vrsta podrške pomaže — finansijska, stručna ili jednostavno širenje vesti.</p>
+                    <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65;" data-i18n="proj.cta.p">Proces je složen i trajaće mesecima. U međuvremenu, svaka vrsta podrške pomaže — savetodavna, stručna ili jednostavno širenje vesti.</p>
                     <a href="#pomozi" class="btn btn-gold" style="width: 100%; justify-content: center; margin-top: 1rem;" data-i18n="proj.cta.btn">Podržite obnovu →</a>
                 </div>
             </div>
@@ -2640,9 +2671,10 @@
         </div>
         <p> </p>
         <div class="donate-cta reveal">
-            <a href="mailto:obnova.robaje@zam.co.rs" class="btn btn-gold" style="font-size: 0.9rem; padding: 0.9rem 2.2rem;" data-i18n-html="don.cta">
-                ✉&ensp;Pišite nam
+            <a href="https://invite.viber.com/?g2=AQBVyNMu9krcSFa6%2BS5JY%2F4eEvx80g2YU1caaq9ONk287oLLVexP3dvtBi18k9Cu" target="_blank" rel="noopener" aria-label="Pridružite se Viber grupi">
+                <img src="images/viber_qr.png" alt="Viber QR kod — pridružite se grupi" class="wap-qr">
             </a>
+            <p class="wap-label" data-i18n-html="don.wap">Skenirajte QR kod ili kliknite — direktno u <span data-notrans>Viber</span> grupu</p>
             <p class="donate-note" data-i18n="don.note">Projekat se realizuje uz saradnju lokalne zajednice, porodica iz sela oko Tustog Brda i prijatelja ovog kraja. Srpska Pravoslavna Crkva biće krajnji staratelj obnovljene svetinje i garant njenog duhovnog poslanstva.</p>
         </div>
 
@@ -2673,20 +2705,20 @@
             <div class="footer-brand" data-i18n="foot.brand">Crkva na Tustom Brdu</div>
             <p data-i18n="foot.tag">Projekat obnove crkve porušene u Drugom svetskom ratu, na istočnom vrhu Tustog brda u selu Robaje, opština Mionica.</p>
             <p style="margin-top: 0.8rem;">
-                <a href="https://www.google.com/maps/place/%D0%A6%D1%80%D0%BA%D0%B2%D0%B0+%D0%BD%D0%B0+%D0%A2%D1%83%D1%81%D1%82%D0%BE%D0%BC+%D0%B1%D1%80%D0%B4%D1%83" target="_blank" rel="noopener">📍 <span data-i18n="foot.map">Prikaži na Google Maps</span></a>
+                <a href="https://www.google.com/maps/place/%D0%A6%D1%80%D0%BA%D0%B2%D0%B0+%D0%BD%D0%B0+%D0%A2%D1%83%D1%81%D1%82%D0%BE%D0%BC+%D0%B1%D1%80%D0%B4%D1%83+-+%D0%BF%D0%BE%D1%80%D1%83%D1%88%D0%B5%D0%BD%D0%B0+1944./@44.2092448,19.9809982,629m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4759ef0006260bf7:0x867acbb599c76a34!8m2!3d44.2092448!4d19.9809982!16s%2Fg%2F11z7q5wj2g?hl=sr" target="_blank" rel="noopener">📍 <span data-i18n-html="foot.map">Prikaži na <span data-notrans>Google Maps</span></span></a>
             </p>
             <p style="margin-top: 0.5rem;">
-                <a href="mailto:obnova.robaje@zam.co.rs" data-notrans>✉ obnova.robaje@zam.co.rs</a>
+                <a href="mailto:obnova.robaje@zam.co.rs" data-notrans style="display:none;">✉ obnova.robaje@zam.co.rs</a>
             </p>
         </div>
         <div>
             <div class="footer-h" data-i18n="foot.nav">Stranica</div>
             <ul>
-                <li><a href="#istorija" data-i18n="nav.hist">Hronologija</a></li>
-                <li><a href="#crkva" data-i18n="nav.church">O crkvi</a></li>
+                <li><a href="#istorija" data-i18n="nav.hist">Istorija</a></li>
+                <li><a href="#crkva" data-i18n="nav.church">Crkva</a></li>
+                <li><a href="#projekat" data-i18n="nav.proj">Projekat</a></li>
                 <li><a href="#pomozi" data-i18n="nav.vil">Zajednica</a></li>
-                <li><a href="#projekat" data-i18n="nav.proj">Projekat obnove</a></li>
-                <li><a href="#pomozi" data-i18n="nav.don">Pridruži se</a></li>
+                <li><a href="https://invite.viber.com/?g2=AQBVyNMu9krcSFa6%2BS5JY%2F4eEvx80g2YU1caaq9ONk287oLLVexP3dvtBi18k9Cu" target="_blank" rel="noopener" data-i18n="nav.don">Pridruži se</a></li>
             </ul>
         </div>
         <div>
@@ -2694,7 +2726,7 @@
             <p style="font-size: 0.82rem; line-height: 1.65;">
                 Crnobrnja A.N. & Radivojević M. (2003/2006). <em>Arheološka karta Bukovca i okoline.</em> Arheološki pregled Srpskog arheološkog društva, 1, 71–77.
             </p>
-            <p style="margin-top: 0.8rem; font-size: 0.82rem;">
+            <p style="margin-top: 0.8rem; font-size: 0.82rem; display:none;">
                 Poreklo prezimena: <a href="https://www.poreklo.rs/2013/05/09/poreklo-prezimena-selo-robaje-mionica/" target="_blank" rel="noopener" data-notrans>poreklo.rs</a>
             </p>
         </div>
@@ -2713,6 +2745,25 @@
     const onScroll = () => nav.classList.toggle('solid', window.scrollY > 50);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    // ── Scroll-spy: highlight active nav link
+    const spySections = ['istorija', 'crkva', 'projekat', 'pomozi'];
+    const spyLinks = {};
+    spySections.forEach(id => {
+        const a = nav.querySelector(`a[href="#${id}"]`);
+        if (a) spyLinks[id] = a;
+    });
+    const spyObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (spyLinks[e.target.id]) {
+                spyLinks[e.target.id].classList.toggle('nav-active', e.isIntersecting);
+            }
+        });
+    }, { threshold: 0, rootMargin: '-15% 0px -70% 0px' });
+    spySections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) spyObs.observe(el);
+    });
 
     // ── Parallax hero
     const heroBg = document.getElementById('heroBg');
@@ -2925,7 +2976,7 @@ const EN = {
   'proj.stat.val':  'In progress',
   'proj.stat.desc': 'Preliminary contract signed · Awaiting encumbrance removal and owner registration',
   'proj.cta.eye':   'How you can help right now',
-  'proj.cta.p':     'The process is complex and will take months. In the meantime, every kind of support helps — financial, professional or simply spreading the word.',
+  'proj.cta.p':     'The process is complex and will take months. In the meantime, every kind of support helps — advisory, professional or simply spreading the word.',
   'proj.cta.btn':   'Support the rebuilding →',
   // donate
   'don.eye':  'Join us',
@@ -2934,6 +2985,7 @@ const EN = {
   'don.c4h':  'Share the news',
   'don.c4p':  'Share this page with anyone who comes from the villages around Tusto Brdo — or feels connected to this area in any way. Every share is one step closer to rebuilding.',
   'don.cta':  '✉&ensp;Write to us',
+  'don.wap':  'Scan the QR code or click — straight into the <span data-notrans>Viber</span> group',
   'don.note': 'The project is being realised in cooperation with the local community, families from villages around Tusto Brdo and friends of this region. The Serbian Orthodox Church will be the ultimate custodian of the rebuilt sanctuary and the guarantor of its spiritual mission.',
   // gallery
   'gal.eye':  'Gallery',
@@ -2942,7 +2994,7 @@ const EN = {
   // footer
   'foot.brand': 'Church on Tusto Brdo',
   'foot.tag':   'Rebuilding project for a church destroyed in World War II, on the eastern peak of Tusto Brdo in the village of Robaje, Mionica municipality.',
-  'foot.map':   'View on Google Maps',
+  'foot.map':   'View on <span data-notrans>Google Maps</span>',
   'foot.nav':   'Pages',
   'foot.src':   'Sources',
   'foot.copy':  '© 2026 · Church rebuilding project on Tusto Brdo',
@@ -2971,6 +3023,9 @@ const EN = {
   'church.tag3': 'Oral tradition',
   'church.ev3h': 'Testimony of V. Mijović',
   'church.ev3p': 'Information about the church and its destruction came from V. Mijović, a local informant, and was confirmed by field inspection. Villagers who knew of the church consciously left that portion of land uncultivated — the land kept the memory of the sanctuary alive.',
+  'church.tag5': 'Oral tradition',
+  'church.ev5h': 'Dedicated to Saint Archangel Michael',
+  'church.ev5p': 'According to local tradition, the church on Tusto Brdo was dedicated to <strong>Saint Archangel Michael</strong>. This has not been confirmed by any written sources. We believe that an investigation of the church remains could provide an answer to this question as well.',
   'church.tag4': 'Context',
   'church.ev4h': "The site's prehistoric sanctity",
   'church.ev4p': 'Not far from the church, on the same hill, Bronze Age stone burial mounds (~2000–1200 BCE) have been recorded — indicating the ritual significance of this space across millennia. Throughout history, Christian churches have frequently been built on sites previously considered sacred.',
