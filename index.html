@@ -939,7 +939,7 @@
 
         .prog-bar {
             height: 100%;
-            width: 18%;
+            width: 45%;
             background: linear-gradient(90deg, var(--gold), var(--gold-light));
             border-radius: 4px;
             transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
@@ -2198,8 +2198,8 @@
                 <div class="tl-right">
                     <div class="tl-content">
                         <h3 data-i18n="tl.8">Danas — Projekat obnove počinje</h3>
-                        <p data-i18n="tl.8.p">Nakon više od 80 godina, pokrenut je projekat vraćanja svetog mesta na Tustom Brdu. Prve konkretne pravne i vlasničke korake napravili smo tokom maja 2026. Zemlja je pronađena, vlasnik identifikovan, predugovor potpisan — od maja 2026. čekamo da katastar prihvati izjavu izvršitelja i skine blokadu sa parcele, pa da se može ići dalje ka obnovi.</p>
-                        <span class="tl-source">Aktuelni projekat · avgust 2026.</span>
+                        <p data-i18n-html="tl.8.p">Nakon više od 80 godina, pokrenut je projekat vraćanja svetog mesta na Tustom Brdu. Prve konkretne pravne i vlasničke korake napravili smo tokom maja 2026. Zemlja je pronađena, vlasnik identifikovan, predugovor potpisan. <strong>28. septembra 2026.</strong> završena je overa ugovora, parcela je u novom vlasništvu — i na putu da se izdvoji i pokloni Srpskoj Pravoslavnoj Crkvi.</p>
+                        <span class="tl-source">Aktuelni projekat · septembar 2026.</span>
                     </div>
                 </div>
             </div>
@@ -2553,14 +2553,14 @@
                 <p data-i18n-html="chal.c3p">Vlasnik dela parcele na kome se nalazi crkva je identifikovan i dogovor je postignut. Predugovor je potpisan uz kaparu <strong style="color: var(--gold-light);">29. maja 2026.</strong></p>
             </div>
             <div class="c-card reveal">
-                <div class="c-icon">⏳</div>
-                <h4 data-i18n="chal.c4h">Katastar — čeka se deblokada</h4>
-                <p data-i18n="chal.c4p">Teret je izmiren, a izvršitelj je podneo izjavu za skidanje blokade sa parcele. Od maja 2026. čekamo da katastar prihvati tu izjavu i ukine blokadu — tek tada vlasnik može da proda deo zemlje. Ko može da pomogne u katastru, učinio bi ogroman napredak.</p>
+                <div class="c-icon">✅</div>
+                <h4 data-i18n="chal.c4h">Kupoprodaja završena</h4>
+                <p data-i18n-html="chal.c4p">Blokada je skinuta, overa ugovora završena <strong>28. septembra 2026.</strong> — parcela je sada u novom vlasništvu. Sledi izdvajanje dela sa crkvom i poklon Srpskoj Pravoslavnoj Crkvi.</p>
             </div>
             <div class="c-card reveal delay-1">
                 <div class="c-icon">📏</div>
-                <h4 data-i18n="chal.c5h">Geometar i deoba</h4>
-                <p data-i18n="chal.c5p">Sledeći korak: geometar meri tačan deo parcele za crkvu i priprema elaborat za formalno izdvajanje. Potom sledi saglasnost suvlasnika i prenos na Srpsku Pravoslavnu Crkvu.</p>
+                <h4 data-i18n="chal.c5h">Izdvajanje i poklon SPC</h4>
+                <p data-i18n="chal.c5p">Sledeći korak: geometar meri tačan deo parcele za crkvu i priprema elaborat za formalno izdvajanje. Potom taj deo ide kao poklon Srpskoj Pravoslavnoj Crkvi.</p>
             </div>
             <div class="c-card reveal delay-2">
                 <div class="c-icon">🌿</div>
@@ -2603,20 +2603,19 @@
                         </div>
                     </li>
                     <li class="proj-step">
-                        <div class="step-dot active">⏳</div>
+                        <div class="step-dot done">✓</div>
                         <div class="step-body">
-                            <div class="step-when" data-i18n="proj.s3.when">Maj 2026. — u toku</div>
-                            <h4 data-i18n="proj.s3.h">Upis vlasnika u katastar</h4>
-                            <p data-i18n="proj.s3.p">Teret na zemljištu je izmiren. Izvršitelj je podneo izjavu kojom se traži skidanje blokade sa parcele. Od maja 2026. čekamo da Katastar nepokretnosti prihvati tu izjavu i ukine blokadu — tek posle toga vlasnik može formalno da proda deo zemlje na kome je crkva.</p>
-                            <span class="alert-badge" data-i18n="proj.s3.alert">⚠ Potrebna pomoć u katastru · deblokada parcele bi ubrzala ceo projekat</span>
+                            <div class="step-when" data-i18n="proj.s3.when">28. septembar 2026.</div>
+                            <h4 data-i18n="proj.s3.h">Overa ugovora — novo vlasništvo</h4>
+                            <p data-i18n-html="proj.s3.p">Katastar je skinuo blokadu sa parcele, overa kupoprodajnog ugovora je završena <strong>28. septembra 2026.</strong> — parcela je sada u novom vlasništvu. Time je zatvoren put od predugovora do pravnog prenosa.</p>
                         </div>
                     </li>
                     <li class="proj-step">
-                        <div class="step-dot pending">4</div>
+                        <div class="step-dot active">⏳</div>
                         <div class="step-body">
-                            <div class="step-when" data-i18n="proj.s4.when">Naredni korak</div>
+                            <div class="step-when" data-i18n="proj.s4.when">Naredni korak · u toku</div>
                             <h4 data-i18n="proj.s4.h">Angažovanje geometra</h4>
-                            <p data-i18n="proj.s4.p">Po upisu vlasnika, geometar će izmeriti tačan deo parcele za crkvu i pripremiti elaborat za formalno izdvajanje iz veće (17ha) parcele.</p>
+                            <p data-i18n="proj.s4.p">Geometar će izmeriti tačan deo za crkvu i pripremiti elaborat za formalno izdvajanje iz veće (17ha) parcele — preduslov za poklon SPC.</p>
                         </div>
                     </li>
                     <li class="proj-step">
@@ -2639,8 +2638,8 @@
                         <div class="step-dot pending">7</div>
                         <div class="step-body">
                             <div class="step-when" data-i18n="proj.s7.when">Cilj</div>
-                            <h4 data-i18n="proj.s7.h">Prenos na Srpsku Pravoslavnu Crkvu</h4>
-                            <p data-i18n="proj.s7.p">Kada novi vlasnik bude upisan 1/1 na deo parcele, zemlja se prenosi na SPC — čime se stvara pravni i institucionalni okvir za obnovu svetinje.</p>
+                            <h4 data-i18n="proj.s7.h">Poklon Srpskoj Pravoslavnoj Crkvi</h4>
+                            <p data-i18n="proj.s7.p">Kada se deo parcele sa crkvom formalno izdvoji, prenosi se kao poklon Srpskoj Pravoslavnoj Crkvi — čime se stvara pravni i institucionalni okvir za obnovu svetinje.</p>
                         </div>
                     </li>
                     <li class="proj-step">
@@ -2656,15 +2655,15 @@
 
             <div class="reveal delay-2">
                 <div class="prog-card">
-                    <span class="eyebrow" data-i18n="proj.stat.eye">Status projekta · avgust 2026.</span>
+                    <span class="eyebrow" data-i18n="proj.stat.eye">Status projekta · septembar 2026.</span>
                     <div class="prog-status" data-i18n="proj.stat.val">U toku</div>
-                    <p class="prog-desc" data-i18n="proj.stat.desc">Predugovor potpisan · Od maja 2026. čeka se da katastar prihvati izjavu izvršitelja i skine blokadu sa parcele</p>
+                    <p class="prog-desc" data-i18n="proj.stat.desc">Overa završena 28.9.2026. · Parcela u novom vlasništvu · Sledi izdvajanje i poklon SPC</p>
                     <div class="prog-bar-wrap">
                         <div class="prog-bar" id="progressBar"></div>
                     </div>
                     <div class="prog-labels">
                         <span data-i18n="proj.plabel1">Pokretanje · Maj 2026.</span>
-                        <span style="font-weight: 700; color: var(--gold);" data-i18n="proj.plabel2">~18% završeno</span>
+                        <span style="font-weight: 700; color: var(--gold);" data-i18n="proj.plabel2">~45% završeno</span>
                     </div>
                 </div>
 
@@ -2871,7 +2870,7 @@
     const bar = document.getElementById('progressBar');
     if (bar) {
         const barObs = new IntersectionObserver(([e]) => {
-            if (e.isIntersecting) { bar.style.width = '18%'; barObs.disconnect(); }
+            if (e.isIntersecting) { bar.style.width = '45%'; barObs.disconnect(); }
         }, { threshold: 0.5 });
         barObs.observe(bar);
     }
@@ -3051,19 +3050,19 @@ const EN = {
   'chal.c2p':  'Over the decades, the plot has acquired about 20 co-owners. Formally separating the church portion requires agreement from all co-owners — complex, but achievable with community goodwill.',
   'chal.c3h':  'Owner found',
   'chal.c3p':  'The owner of the portion of the plot where the church stands has been identified and an agreement reached. A preliminary contract was signed with a deposit on <strong style="color: var(--gold-light);">29 May 2026</strong>.',
-  'chal.c4h':  'Cadastre — awaiting release of blockade',
-  'chal.c4p':  'The encumbrance has been settled, and the court enforcement officer (izvršitelj) has submitted a statement to lift the blockade on the parcel. Since May 2026 we have been waiting for the cadastre to accept that statement and release the blockade — only then can the owner sell that part of the land. Anyone who can help at the cadastre would make enormous progress.',
-  'chal.c5h':  'Surveyor and partition',
-  'chal.c5p':  'Next step: a licensed surveyor measures the exact church portion and prepares a partition plan. This is followed by co-owner consent and transfer to the Serbian Orthodox Church.',
+  'chal.c4h':  'Sale completed',
+  'chal.c4p':  'The blockade was lifted and the contract was notarised on <strong>28 September 2026</strong> — the parcel is now under new ownership. Next: formal separation of the church portion and a gift to the Serbian Orthodox Church.',
+  'chal.c5h':  'Partition and gift to the SOC',
+  'chal.c5p':  'Next step: a licensed surveyor measures the exact church portion and prepares a partition plan. That portion will then be gifted to the Serbian Orthodox Church.',
   'chal.c6h':  'Fieldwork begins',
   'chal.c6p':  'While administration runs its course, we can begin fieldwork — locating the exact church foundations under the forest cover. The land preserves traces waiting to be uncovered.',
   // project
   'proj.eye':  'Rebuilding project',
   'proj.h2':   'Steps towards rebuilding',
   'proj.lead': 'Every signed document, every administrative step and every day of work on the ground is part of one goal: for the church on Tusto Brdo to stand again.',
-  'proj.stat.eye':  'Project status · August 2026',
+  'proj.stat.eye':  'Project status · September 2026',
   'proj.stat.val':  'In progress',
-  'proj.stat.desc': 'Preliminary contract signed · Since May 2026 awaiting cadastre acceptance of the enforcement officer\'s statement and release of the parcel blockade',
+  'proj.stat.desc': 'Contract notarised 28 Sept 2026 · Parcel under new ownership · Next: partition and gift to the SOC',
   'proj.cta.eye':   'How you can help right now',
   'proj.cta.p':     'The process is complex and will take months. In the meantime, every kind of support helps — advisory, professional or simply spreading the word.',
   'proj.cta.btn':   'Support the rebuilding →',
@@ -3100,7 +3099,7 @@ const EN = {
   'tl.6.p': 'During the communist period, the land on which the church ruins stand was nationalised and became part of a plot of nearly 17 hectares — with an unusual boundary shape. Over the decades, that plot acquired around 20 co-owners. The church portion was never cultivated — the forest covering it was an unintentional but perhaps providential protection of the remains.',
   'tl.7.p': 'As part of the Robaje 2003 Archaeological Science School, organised by the Petnica Research Station, a team led by Adam N. Crnobrnja and Miljana Radivojević conducted a systematic survey. In addition to the prehistoric burial mounds, the church remains at the site "Crkvine" (no. 14) were documented. The work was published in the Archaeological Review of the Serbian Archaeological Society 1 (Belgrade, 2006).',
   'tl.8':   'Today — The Rebuilding Project Begins',
-  'tl.8.p': 'After more than 80 years, a project has been launched to restore the sacred site of Tusto Brdo. The first concrete legal and ownership steps were taken in May 2026. The land has been found, the owner identified, a preliminary contract signed — since May 2026 we have been waiting for the cadastre to accept the enforcement officer\'s statement and release the parcel blockade, so the path to rebuilding can continue.',
+  'tl.8.p': 'After more than 80 years, a project has been launched to restore the sacred site of Tusto Brdo. The first concrete legal and ownership steps were taken in May 2026. The land has been found, the owner identified, a preliminary contract signed. On <strong>28 September 2026</strong> the contract was notarised: the cadastre lifted the blockade, the parcel is under new ownership — and on the path to being separated and gifted to the Serbian Orthodox Church.',
   // church evidence cards
   'church.tag1': 'Physical remains',
   'church.ev1h': 'Walls still standing',
@@ -3170,13 +3169,12 @@ const EN = {
   'proj.s2.when': '29 May 2026',
   'proj.s2.h':    'Preliminary contract signed with deposit',
   'proj.s2.p':    'The purchase was formalised by signing a preliminary contract with a deposit payment. The legal framework for the transfer has been established.',
-  'proj.s3.when': 'May 2026 — ongoing',
-  'proj.s3.h':    'Owner registration in the land registry',
-  'proj.s3.p':    'The encumbrance on the land has been settled. The court enforcement officer (izvršitelj) has submitted a statement seeking to lift the blockade on the parcel. Since May 2026 we have been waiting for the Land Registry to accept that statement and release the blockade — only then can the owner formally sell the portion of land where the church stands.',
-  'proj.s3.alert':'⚠ Help needed at the cadastre · releasing the parcel blockade would accelerate the whole project',
-  'proj.s4.when': 'Next step',
+  'proj.s3.when': '28 September 2026',
+  'proj.s3.h':    'Contract notarised — new ownership',
+  'proj.s3.p':    'The cadastre lifted the parcel blockade and the purchase contract was notarised on <strong>28 September 2026</strong> — the parcel is now under new ownership. That closes the path from the preliminary contract to legal transfer.',
+  'proj.s4.when': 'Next step · ongoing',
   'proj.s4.h':    'Engaging a licensed surveyor',
-  'proj.s4.p':    'Once the owner is registered, a licensed surveyor will measure the exact church portion and prepare a partition plan for formal separation from the larger (17 ha) plot.',
+  'proj.s4.p':    'A licensed surveyor will measure the exact church portion and prepare a partition plan for formal separation from the larger (17 ha) plot — a prerequisite for the gift to the SOC.',
   'proj.s5.when': 'In process',
   'proj.s5.h':    'Co-owner consent for partition',
   'proj.s5.p':    'Formally separating the church portion requires the consent of all ~20 co-owners of the larger plot. With community goodwill, this step is achievable.',
@@ -3184,13 +3182,13 @@ const EN = {
   'proj.s6.h':    'Field investigation',
   'proj.s6.p':    'While administrative processes run their course, we can begin field investigation — locating the precise church foundations beneath the forest cover. The remains are documented but the exact foundations have yet to be mapped.',
   'proj.s7.when': 'Goal',
-  'proj.s7.h':    'Transfer to the Serbian Orthodox Church',
-  'proj.s7.p':    'Once the new owner is registered with full title to the plot portion, the land is transferred to the SOC — establishing the legal and institutional framework for rebuilding the sanctuary.',
+  'proj.s7.h':    'Gift to the Serbian Orthodox Church',
+  'proj.s7.p':    'Once the church portion is formally separated, it will be gifted to the Serbian Orthodox Church — establishing the legal and institutional framework for rebuilding the sanctuary.',
   'proj.s8.when': 'Vision',
   'proj.s8.h':    'Rebuilding the church',
   'proj.s8.p':    'Building a new church on the foundations of the old — the sacred site of Robaje returned to the community, accessible to all who come from or feel connected to this region.',
   'proj.plabel1': 'Launched · May 2026',
-  'proj.plabel2': '~18% complete',
+  'proj.plabel2': '~45% complete',
 };
 
 // ── Storage: origMarkup maps every [data-i18n/data-i18n-html] el → its original innerHTML
